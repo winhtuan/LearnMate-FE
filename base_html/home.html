@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnMate - Classes Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-50 min-h-screen flex overflow-x-hidden transition-colors duration-300">
+<nav class="group fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col justify-between h-auto py-8 bg-white dark:bg-slate-900 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.5)] rounded-[3rem] w-[88px] hover:w-64 transition-[width] duration-300 ease-out overflow-hidden border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col gap-2 w-full px-4">
+<div class="flex items-center gap-4 mb-8 px-2">
+<div class="size-10 flex items-center justify-center bg-primary rounded-full shrink-0 text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<span class="text-xl font-bold tracking-tight whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75 text-slate-900 dark:text-white">LearnMate</span>
+</div>
+<a class="flex items-center gap-4 p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group/item text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] shrink-0 w-8 text-center">home</span>
+<span class="font-medium text-base whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Home</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-full bg-primary/10 text-primary transition-colors group/item" href="#">
+<span class="material-symbols-outlined text-[28px] shrink-0 w-8 text-center fill-current">book_2</span>
+<span class="font-bold text-base whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Classes</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group/item text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] shrink-0 w-8 text-center">calendar_month</span>
+<span class="font-medium text-base whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Schedule</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group/item text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] shrink-0 w-8 text-center">chat_bubble</span>
+<span class="font-medium text-base whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Messages</span>
+</a>
+</div>
+<div class="flex flex-col gap-2 w-full px-4 mt-8">
+<div class="h-px w-full bg-slate-100 dark:bg-slate-800 mb-2"></div>
+<a class="flex items-center gap-4 p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group/item text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] shrink-0 w-8 text-center">settings</span>
+<span class="font-medium text-base whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">Settings</span>
+</a>
+<a class="flex items-center gap-4 p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mt-2" href="#">
+<div class="size-10 rounded-full bg-slate-200 shrink-0 overflow-hidden border-2 border-white dark:border-slate-700 shadow-sm">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDowOSvlZk9ccf5zSP5egVsWaHAEir6zofBVIxouVt0UDQDdoowleUwYXCFC2drs2sJa3OXs802jYcxWzhshWWbJZCcHvRraLc966Xa-WCI61lC-hVU_aQLXLiqVQfgVB0nEvJ4oyYtfmitjcpalc-tMZhD1vsTMgW9kyxlPlSlU28AqGrFOu95JXq7GH2bV6Ze-mx1fj4aaGReOC0KlWfA3sQFg-b0eYQGLTup_Y-ojp0h3nbGIKSQiMD1wOqlYcbiOdwWUuLr4Sc"/>
+</div>
+<div class="flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
+<span class="font-bold text-sm text-slate-900 dark:text-white truncate">Alex Doe</span>
+<span class="text-xs text-slate-500 truncate">Student</span>
+</div>
+</a>
+</div>
+</nav>
+<main class="flex-1 flex flex-col pl-32 pr-6 md:pr-10 py-6 min-w-0 transition-all duration-300">
+<header class="flex items-center justify-between mb-8 gap-4">
+<div class="flex items-center gap-2 text-sm md:text-base">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 transition-colors" href="#">Current Term</a>
+<span class="text-slate-300 dark:text-slate-600">/</span>
+<span class="text-slate-900 dark:text-white font-semibold">Classes</span>
+</div>
+<div class="hidden md:flex items-center bg-white dark:bg-slate-900 rounded-full px-4 py-2.5 shadow-sm border border-slate-100 dark:border-slate-800 w-full max-w-md focus-within:ring-2 focus-within:ring-primary/20 transition-shadow">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 w-full text-sm" placeholder="Search courses, assignments..." type="text"/>
+</div>
+<button class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<section class="flex items-center justify-between gap-6 mb-8">
+<div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-hide">
+<button class="px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-sm font-semibold shadow-lg shadow-slate-200 dark:shadow-none hover:shadow-xl transition-all whitespace-nowrap">
+                    All Classes
+                </button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
+                    Active
+                </button>
+<button class="px-5 py-2.5 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-full text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all whitespace-nowrap">
+                    Completed
+                </button>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Courses in Progress</p>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">4</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm border border-slate-100 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Tasks Completed</p>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">12</p>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-[2rem] shadow-lg shadow-primary/20 flex items-center justify-between text-white relative overflow-hidden group cursor-pointer">
+<div class="relative z-10">
+<p class="text-sm text-blue-100">Next Class</p>
+<p class="text-xl font-bold mt-1">Advanced Calculus</p>
+<p class="text-sm text-blue-100 mt-1">Starts in 45 mins</p>
+</div>
+<div class="relative z-10 size-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="absolute -right-4 -bottom-4 size-24 bg-white/10 rounded-full blur-2xl"></div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 pb-10">
+<article class="group relative flex flex-col bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-300 border border-slate-100 dark:border-slate-800">
+<div class="h-48 w-full rounded-[2rem] bg-cover bg-center relative overflow-hidden mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC16WruJdFA3tkKRjS6MecdoRWlb46A8AtN0Xw4xf7uvKzc1yf8DO2D10csN7ntdm47pwEmFwfqu7d6Zt34BCu76qvosK6YN7p4X3wWtkM4GZQwVtPxTqTkTFGQVlUOUpoWLGRqXseHOKQG2V3LKVUmzLRMsGcaJnfD7EzL-3SgdMu1T7A1eDuXMmCRWrYkWdqNgzdynR-LEeg9Dj_wp78rjOhosJBA_1jseIuM6rKKDsdz8OMpd0KMGB6vMwpla34qkraX3p2fWck');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 shadow-sm">
+                        MATH 101
+                    </div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="text-sm font-medium opacity-90">Prof. Sarah Smith</p>
+</div>
+</div>
+<div class="px-2 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Advanced Calculus</h3>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2">Understanding limits, derivatives, and integrals in higher dimensions.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<div class="text-sm">
+<span class="text-slate-500 dark:text-slate-400 font-medium">Next:</span>
+<span class="text-slate-900 dark:text-white font-bold ml-1">Mon, 10:00 AM</span>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-2xl font-semibold text-sm hover:opacity-90 transition-opacity">
+                                Resume
+                            </button>
+<button class="size-11 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined">folder_open</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<article class="group relative flex flex-col bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-300 border border-slate-100 dark:border-slate-800">
+<div class="h-48 w-full rounded-[2rem] bg-cover bg-center relative overflow-hidden mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJDpl-yzES2Bw1dklwscx8CpdGsPfM0NTQ1x9IRvkdcdv_rxMZyxAHp7CEgNNV7d1sGj8zXqlGs0Mb1I-Mgir63fHXheQbVaqpllZmV-pSZfba8uphDY-gGM39z6jqr_z0GhFkd57oB2NnbuiiPpiNiGxUNmMJFmIElq9KpSbaBTLH5kcmU7Pz6Lzx-Go4kgk-MevJ-RiovWjVGfzRRCvMKSTDr-FUz4r73IsCLmd_QzfACU7r882WcesnZi0IOAP0KnJywEUUl7o');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 shadow-sm">
+                        HIST 202
+                    </div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="text-sm font-medium opacity-90">Prof. Alan Jones</p>
+</div>
+</div>
+<div class="px-2 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">European History</h3>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2">A deep dive into the Renaissance, Reformation, and Enlightenment eras.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<div class="text-sm">
+<span class="text-slate-500 dark:text-slate-400 font-medium">Next:</span>
+<span class="text-slate-900 dark:text-white font-bold ml-1">Tue, 02:00 PM</span>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-3 rounded-2xl font-semibold text-sm hover:opacity-90 transition-opacity">
+                                Resume
+                            </button>
+<button class="size-11 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined">folder_open</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<article class="group relative flex flex-col bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-300 border border-slate-100 dark:border-slate-800">
+<div class="h-48 w-full rounded-[2rem] bg-cover bg-center relative overflow-hidden mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOoSM2oqgBD6o8kzdIdvd2reUOnqs436xANZ5OmY8tatpfcTXk6Y4dMg3jySHyavaPnhyepy0e6us6KN92R2oTN00YLYvub1zlp5bUWkr-9fh87RRcSLyw4Kt-9y6_ZpoaGeXR3M43RHwhuYM-i8GgnWVZlcnjcFp7_KahwOl2iqz69NIj1HGE2I9n95D-6w_czNGzu3yJ9PlxAqgTh91vJuDY3ylIP0ilMozQOoN254noOKXj4c8e5JwNUBULUPlLEwulZPUNPmQ');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 shadow-sm">
+                        PSY 101
+                    </div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="text-sm font-medium opacity-90">Dr. Emily Ray</p>
+</div>
+<div class="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg shadow-rose-500/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Due Tomorrow</span>
+</div>
+</div>
+<div class="px-2 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Intro to Psychology</h3>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2">Basics of human behavior, cognition, and emotional development.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-2xl border border-slate-100 dark:border-slate-800">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<div class="text-sm">
+<span class="text-slate-500 dark:text-slate-400 font-medium">Next:</span>
+<span class="text-slate-900 dark:text-white font-bold ml-1">Wed, 11:30 AM</span>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-white dark:bg-slate-800 text-primary border-2 border-primary/20 hover:border-primary hover:bg-primary hover:text-white py-3 rounded-2xl font-bold text-sm transition-all">
+                                Submit Task
+                            </button>
+<button class="size-11 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined">folder_open</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<article class="group relative flex flex-col bg-white dark:bg-slate-900 rounded-[2.5rem] p-4 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-300 border border-slate-100 dark:border-slate-800 opacity-60 hover:opacity-100 grayscale hover:grayscale-0">
+<div class="h-48 w-full rounded-[2rem] bg-cover bg-center relative overflow-hidden mb-4" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWRyL1S6p85xFDURdRWo6hSt4CzStU2xqBVOX7l1FP_6wqPSKzLuTY8Z_GqJEQto9M3itKA7DIiQaxXp_hhFw9Urlcbz7BvXn-N7SxRx2LN4eb6Sl3whCUOFllZgmb1wJDOUSbsebXILsSkkTYilnxFDy-x2a42i4qhlU4L1b51-nL9TJOuPNbZwD2l0Lwq8kquV8ZjF0ob6MxJ_rm7X-k-ZOFxlbfcOWbF4b4of8McJQxVtSyFsRP49g5HtaurByMGsUXlwiyMa8');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 shadow-sm">
+                        CS 305
+                    </div>
+<div class="absolute bottom-4 left-4 right-4 text-white">
+<p class="text-sm font-medium opacity-90">Prof. David Kim</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[1px] group-hover:backdrop-blur-none transition-all">
+<span class="bg-black/50 text-white px-3 py-1 rounded-full text-xs backdrop-blur-md">Upcoming Term</span>
+</div>
+</div>
+<div class="px-2 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Web Development</h3>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2">Full stack development using modern frameworks and tools.</p>
+<div class="mt-auto">
+<div class="w-full flex items-center justify-center py-4 text-slate-400 text-sm font-medium bg-slate-50 dark:bg-slate-800 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700">
+                            Course Starts in 14 days
+                        </div>
+</div>
+</div>
+</article>
+</section>
+</main>
+
+</body></html>

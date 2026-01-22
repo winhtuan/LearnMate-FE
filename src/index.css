@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+@theme {
+  --color-primary: #2b8cee;
+  --color-background-light: #f6f7f8;
+  --color-background-dark: #101922;
+
+  --color-candy-green: #4ade80;
+  --color-candy-red: #f87171;
+  --color-candy-blue: #38bdf8;
+  --color-candy-yellow: #fcd34d;
+  --color-candy-purple: #a78bfa;
+
+  --font-display: "Roboto", "sans-serif";
+  --font-body: "Roboto", "sans-serif";
+  --font-plus: "Roboto", "sans-serif";
+  --font-noto: "Roboto", "sans-serif";
+  --font-family-display: "Roboto", "sans-serif";
+
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+
+  --shadow-toy: 0 8px 0 rgba(0, 0, 0, 0.15);
+  --shadow-toy-hover: 0 10px 0 rgba(0, 0, 0, 0.15);
+  --shadow-toy-active: 0 4px 0 rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.5);
+  --shadow-gem-glow: 0 0 10px rgba(74, 222, 128, 0.6);
+
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pop: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animate-soft-pulse: softPulse 2s infinite;
+  --animate-sound-wave: soundWave 1.2s infinite ease-in-out;
+  --animate-spin-slow: spin 12s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pop {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes softPulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      transform: scale(1.02);
+      box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  @keyframes soundWave {
+    0%,
+    100% {
+      opacity: 0.4;
+      height: 4px;
+    }
+    50% {
+      opacity: 1;
+      height: 12px;
+    }
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px #fff;
+  paint-order: stroke fill;
+}
+.text-stroke-dark {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.emoji-3d {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.1));
+  transition: transform 0.2s;
+}
+.speech-triangle::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  z-index: 10;
+}
+.speech-triangle-border::after {
+  content: "";
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 24px 24px 0;
+  border-style: solid;
+  border-color: #38bdf8 transparent transparent transparent;
+  z-index: 0;
+}
+.bg-dimmed {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    @apply bg-background-light text-[#111418];
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(19, 127, 236, 0.05), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(19, 127, 236, 0.03), transparent 40%);
+}
