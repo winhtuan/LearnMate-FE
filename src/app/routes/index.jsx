@@ -3,14 +3,22 @@ import { Routes, Route } from "react-router-dom";
 import DashboardRoute from "./DashboardRoute";
 import HomeRoute from "./HomeRoute";
 import TeacherManagementRoute from "./TeacherManagementRoute";
+import AdminDashboardRoute from "./AdminDashboardRoute";
+import ClassRoute from "./ClassRoute"; 
+
+import TeacherOperationRoute from "./TeacherOperationRoute";
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<HomeRoute />} />
+            <Route path="/classes/*" element={<ClassRoute />} />
             <Route path="/dashboard" element={<DashboardRoute />} />
             <Route path="/tutorRegister/*" element={<TeacherManagementRoute />} />
             <Route path="/tutorDashboard/*" element={<TeacherManagementRoute />} />
+            <Route path="/admin/*" element={<AdminDashboardRoute />} />
+            <Route path="/teacher1/*" element={<TeacherOperationRoute />} />
+            <Route path="/studentdashboard" element={<DashboardRoute />} />
         </Routes>
     );
 };
