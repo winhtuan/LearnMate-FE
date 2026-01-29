@@ -1,29 +1,50 @@
 export default function AssignmentCard({ assignment }) {
+  const dueLabel = assignment.dueLabel || "Due";
+  const dueColor = assignment.dueColor || "text-slate-900";
+  
   return (
-    <div className={`group relative flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-3xl border border-slate-100 hover:bg-slate-50 hover:shadow-md transition-all duration-300 cursor-pointer ${assignment.locked ? 'opacity-70' : ''}`}>
-      <div className="flex items-center gap-4 mb-3 sm:mb-0">
-        <div className={`size-12 rounded-2xl ${assignment.iconBg} ${assignment.iconColor} flex items-center justify-center shrink-0`}>
-          <span className="material-symbols-outlined text-[24px]">{assignment.icon}</span>
+    <div className={`bg-white p-4 rounded-2xl border ${
+      assignment.highlighted 
+        ? 'border-2 border-primary shadow-lg shadow-primary/5' 
+        : 'border-slate-200 hover:border-slate-300'
+    } cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative overflow-hidden group transition-all ${
+      assignment.completed ? 'opacity-60 hover:opacity-100' : assignment.locked ? 'opacity-90 hover:opacity-100' : ''
+    }`}>
+      {assignment.highlighted && (
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+      )}
+      <div className={`flex items-center gap-4 ${assignment.highlighted ? 'pl-2' : ''}`}>
+        <div className={`size-12 rounded-xl ${assignment.iconBg} ${assignment.iconColor} flex items-center justify-center shrink-0 border ${
+          assignment.iconBg.includes('blue') ? 'border-blue-100' :
+          assignment.iconBg.includes('purple') ? 'border-purple-100' :
+          assignment.iconBg.includes('rose') ? 'border-rose-100' :
+          assignment.iconBg.includes('emerald') ? 'border-emerald-100' :
+          'border-slate-100'
+        }`}>
+          <span className="material-symbols-outlined">{assignment.icon}</span>
         </div>
-        <div className="min-w-0">
-          <h4 className="font-bold text-slate-900 truncate pr-4 text-base group-hover:text-primary transition-colors">{assignment.title}</h4>
-          <div className="flex items-center gap-3 text-xs text-slate-500 mt-1">
-            <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-[14px]">{assignment.locked ? 'lock' : 'calendar_today'}</span>
-              {assignment.due}
-            </span>
-            <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-            <span>{assignment.metadata}</span>
-          </div>
+        <div>
+          <h4 className={`font-bold text-slate-900 text-lg leading-tight ${
+            assignment.completed ? 'line-through decoration-slate-400' : 'group-hover:text-primary'
+          } transition-colors`}>
+            {assignment.title}
+          </h4>
+          <p className="text-sm text-slate-500 mt-1">{assignment.metadata}</p>
         </div>
       </div>
-      <div className="flex items-center justify-between w-full sm:w-auto gap-4 pl-[4rem] sm:pl-0">
-        <div className="flex flex-col items-end">
-          <span className={`text-xs font-bold ${assignment.statusColor} ${assignment.statusBg} px-2 py-1 rounded-lg`}>{assignment.status}</span>
+      <div className="flex items-center justify-between sm:justify-end gap-6 sm:pl-0 pl-2">
+        <div className="text-left sm:text-right">
+          <span className="block text-xs font-bold text-slate-500 mb-1 uppercase tracking-wide">{dueLabel}</span>
+          <span className={`font-semibold text-sm ${dueColor}`}>{assignment.due}</span>
         </div>
-        <div className="text-slate-300 group-hover:text-primary transition-colors">
-          <span className="material-symbols-outlined">{assignment.locked ? 'lock' : 'arrow_forward_ios'}</span>
-        </div>
+        <span className={`inline-flex items-center px-2.5 py-1 rounded-lg ${assignment.statusBg} ${assignment.statusColor} text-xs font-bold border ${
+          assignment.statusBg.includes('amber') ? 'border-amber-200' :
+          assignment.statusBg.includes('rose') ? 'border-rose-200' :
+          assignment.statusBg.includes('emerald') ? 'border-emerald-200' :
+          'border-slate-200'
+        }`}>
+          {assignment.status}
+        </span>
       </div>
     </div>
   );
