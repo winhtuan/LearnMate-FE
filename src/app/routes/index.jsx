@@ -6,6 +6,7 @@ import AdminDashboardRoute from "./AdminDashboardRoute";
 import ClassRoute from "./ClassRoute"; 
 
 import TeacherOperationRoute from "./TeacherOperationRoute";
+import TeacherAssignmentRoute from "./TeacherAssignmentRoute";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
             <Route path="/dashboard" element={<DashboardRoute />} />
             <Route path="/admin/*" element={<AdminDashboardRoute />} />
             <Route path="/teacher1/*" element={<TeacherOperationRoute />} />
+            <Route path="/teacher-assignment/*" element={<TeacherAssignmentRoute />} />
             <Route path="/studentdashboard" element={<DashboardRoute />} />
         </Routes>
     );

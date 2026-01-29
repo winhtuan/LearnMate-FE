@@ -1,0 +1,90 @@
+export const assignmentTrackingData = {
+  user: {
+    name: "Dr. Sarah Wilson",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUEv0nFVYHOJSxs1cQzqCvTtVhndb_OYUD18vXq-Q_X-wYOIgnnd728g26TmWsjym4P4ujXJnmeVb4NEwnmCFSGjrF1yzfRWfEkvZvoycl_3dtHWC9AnfPT2T4EnqV2fuWZBQyrR-oo26E20fjb-_IBcB9UvQq5FS8FuBZN8v0zEYbVr1QOlldui--rIj3Po7TxlLu1hUemTzVUPmVkYeIrRLKjELMtWSOA63nR_NfmHVs-hD3-pmPk6gMFHHMgr489I2beC5TcwA",
+  },
+  navigation: [
+    { label: "Dashboard", href: "#", active: false },
+    { label: "Classes", href: "#", active: true },
+    { label: "Students", href: "#", active: false },
+    { label: "Resources", href: "#", active: false },
+  ],
+  classInfo: {
+    name: "AP Calculus BC",
+    details: "Section 04 • Period 2 • Room 302",
+    breadcrumb: [
+      { label: "Classes", href: "#" },
+      { label: "AP Calculus BC", href: "#" },
+    ]
+  },
+  tabs: [
+    { label: "Overview", active: false },
+    { label: "Students", active: false },
+    { label: "Assignments", active: true },
+    { label: "Statistics", active: false },
+    { label: "Resources", active: false },
+  ],
+  stats: [
+    { label: "Active", value: "08", icon: "assignment", color: "text-blue-600", bg: "bg-blue-50" },
+    { label: "Pending Grading", value: "24", icon: "rate_review", color: "text-amber-600", bg: "bg-amber-50" },
+    { label: "Avg. Completion", value: "92%", icon: "check_circle", color: "text-emerald-600", bg: "bg-emerald-50" },
+  ],
+  assignments: [
+    {
+      id: 1,
+      title: "Derivatives Problem Set",
+      icon: "description",
+      iconBg: "bg-blue-100",
+      iconColor: "text-primary",
+      dueDate: "Oct 28, 2023",
+      submissions: { current: 22, total: 28, percent: 85, color: "bg-emerald-500" },
+      status: "PUBLISHED",
+      statusColor: "bg-emerald-100 text-emerald-700",
+    },
+    {
+      id: 2,
+      title: "Limits & Continuity Quiz",
+      icon: "quiz",
+      iconBg: "bg-amber-100",
+      iconColor: "text-amber-600",
+      dueDate: "Oct 24, 2023",
+      submissions: { current: 28, total: 28, percent: 100, color: "bg-primary" },
+      status: "GRADING",
+      statusColor: "bg-amber-100 text-amber-700",
+    },
+    {
+      id: 3,
+      title: "Integration Lab Reflection",
+      icon: "article",
+      iconBg: "bg-slate-100",
+      iconColor: "text-slate-500",
+      dueDate: "Nov 02, 2023",
+      submissions: { current: 0, total: 28, percent: 0, color: "bg-slate-300" },
+      status: "DRAFT",
+      statusColor: "bg-slate-100 text-slate-600",
+    },
+  ],
+  needsAttention: [
+    {
+      id: 1,
+      name: "Alex Johnson",
+      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPunYrJ6iz7xXzJUUmPZx99WmwLj7q0mgM4Lxp3aPgafEnquF0OfSWrvUY-8MAJ67o5XvvukP9KdqvRWN3uUiTQt4LZBA3jj9KQlb_ujiBcMQOYq_GBeUt_3Krebadb_zcAFP58F4EkbTIQ0W8rRd36ZB1Q4mVjTiEehCC7BV__BHArVmP_fXtMF1REsSuUR5_Yj4HQItMlVPCw4KvgAhknvaHV7wnGhefyGKBBDtlMqz4FORbP3ls_cCIdMXxvN-mKEsSJ-5jOrY",
+      issue: "Overdue: Derivatives PS",
+      actions: ["Message", "Dismiss"],
+    },
+    {
+      id: 2,
+      name: "Sarah Miller",
+      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuB25bSiicRWvZ9H2X2GucT3pbN_2PgnSaAPCxpuynBQkIbihXKNi3juJdm9Azm90_5wloxOGUvHlgoORkaSdpApLKZoTWpbatKAo33T8TjJpFKBRKwtxf6USzIgXx2t9WMpr-m0cTwgp5YCDdhJpbxWq-TUKCyO1bFhj5IT04zNg1Lmv5MgpaisMg8593hBlrKs_Q5QorW9ujKm7X2fHhzWHtn7kX0S4fwhw6iU1DarjvCh5LlhVPUvwXeOImLhV_mGhJv2nHtEM18",
+      issue: "Missing: Quiz Retake",
+      actions: ["Message", "Dismiss"],
+    },
+    {
+      id: 3,
+      name: "David Chen",
+      avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCA86zpLZENmMt6hCgitdb6IUP1UVoYDaF9N04zaSju1OjWZqmkDkODWQgGQOXezjGxvjR32ceiq7VD-FfkMWsWNdhLFI_aQV2y4iZx5-gHGT0dp4aBWhftFS6lh792Zi5DkUmGJTIv4JcxWCauvmeCkA3scIkHwazH_V-hdoNnRNEDCq_io1EzgeR6_HqkyEZAYanI38DSQqjuGVhHhf3ztQKsMjF9pZTcF431V85RBuPup5Gni-ObIcrQJ065rXYefudFn1kdYSc",
+      issue: "Score Drop: -15%",
+      actions: ["Schedule", "Dismiss"],
+    },
+  ],
+};
