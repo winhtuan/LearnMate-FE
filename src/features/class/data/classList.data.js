@@ -5,7 +5,7 @@ export const classListData = {
     avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDowOSvlZk9ccf5zSP5egVsWaHAEir6zofBVIxouVt0UDQDdoowleUwYXCFC2drs2sJa3OXs802jYcxWzhshWWbJZCcHvRraLc966Xa-WCI61lC-hVU_aQLXLiqVQfgVB0nEvJ4oyYtfmitjcpalc-tMZhD1vsTMgW9kyxlPlSlU28AqGrFOu95JXq7GH2bV6Ze-mx1fj4aaGReOC0KlWfA3sQFg-b0eYQGLTup_Y-ojp0h3nbGIKSQiMD1wOqlYcbiOdwWUuLr4Sc"
   },
   navigation: [
-    { icon: "home", label: "Home", href: "#", active: false },
+    { icon: "home", label: "Home", href: "/studentdashboard", active: false },
     { icon: "book_2", label: "Classes", href: "#", active: true },
     { icon: "calendar_month", label: "Schedule", href: "#", active: false },
     { icon: "chat_bubble", label: "Messages", href: "#", active: false }

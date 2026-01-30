@@ -1,15 +1,15 @@
 export default function StudentSubmissionList({ students, filterChips }) {
     return (
-        <aside className="w-80 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 flex flex-col bg-slate-50 dark:bg-slate-900/50">
+        <aside className="w-80 flex-shrink-0 border-r border-slate-200 flex flex-col bg-slate-50">
             {/* Search & Filter */}
-            <div className="p-4 space-y-4 border-b border-slate-200 dark:border-slate-800">
+            <div className="p-4 space-y-4 border-b border-slate-200">
                 {/* Search Input */}
                 <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-[20px]">
                         search
                     </span>
                     <input
-                        className="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-slate-900 dark:text-white placeholder:text-slate-400"
+                        className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-slate-900 placeholder:text-slate-400"
                         placeholder="Search students..."
                         type="text"
                     />
@@ -21,8 +21,8 @@ export default function StudentSubmissionList({ students, filterChips }) {
                         <button
                             key={index}
                             className={`flex-shrink-0 px-3 py-1 border rounded-full text-xs font-medium transition-colors ${chip.active
-                                    ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-100 dark:border-emerald-900/30 text-emerald-700 dark:text-emerald-400'
-                                    : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 shadow-sm hover:border-primary/50'
+                                    ? 'bg-emerald-50 border-emerald-100 text-emerald-700'
+                                    : 'bg-white border-slate-200 text-slate-600 shadow-sm hover:border-primary/50'
                                 }`}
                         >
                             {chip.label}
@@ -37,8 +37,8 @@ export default function StudentSubmissionList({ students, filterChips }) {
                     <div
                         key={student.id}
                         className={`group flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all ${student.active
-                                ? 'bg-white dark:bg-slate-800 border border-primary/30 shadow-sm relative overflow-hidden'
-                                : 'hover:bg-slate-100 dark:hover:bg-slate-800 border border-transparent'
+                                ? 'bg-white border border-primary/30 shadow-sm relative overflow-hidden'
+                                : 'hover:bg-slate-100 border border-transparent'
                             }`}
                     >
                         {/* Active Indicator */}
@@ -51,21 +51,21 @@ export default function StudentSubmissionList({ students, filterChips }) {
                             {student.avatar ? (
                                 <div
                                     className={`bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 border ${student.active
-                                            ? 'border-slate-100 dark:border-slate-700'
-                                            : 'border-slate-200 dark:border-slate-700'
+                                            ? 'border-slate-100'
+                                            : 'border-slate-200'
                                         } ${student.grayscale ? 'grayscale opacity-80' : ''}`}
                                     style={{ backgroundImage: `url("${student.avatar}")` }}
                                     data-alt={`${student.name} portrait`}
                                 />
                             ) : (
-                                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 font-bold text-xs">
+                                <div className="flex items-center justify-center h-10 w-10 rounded-full bg-slate-200 text-slate-500 font-bold text-xs">
                                     {student.initials}
                                 </div>
                             )}
 
                             {/* Status Indicator Dot */}
                             {student.hasIndicator && (
-                                <div className="absolute -bottom-1 -right-1 bg-emerald-500 rounded-full p-0.5 border-2 border-white dark:border-slate-800">
+                                <div className="absolute -bottom-1 -right-1 bg-emerald-500 rounded-full p-0.5 border-2 border-white">
                                     <span className="block size-2 rounded-full bg-white" />
                                 </div>
                             )}
@@ -76,26 +76,26 @@ export default function StudentSubmissionList({ students, filterChips }) {
                             <div className="flex justify-between items-start mb-0.5">
                                 <p
                                     className={`text-sm truncate ${student.active
-                                            ? 'font-semibold text-slate-900 dark:text-white'
+                                            ? 'font-semibold text-slate-900'
                                             : student.grayscale
-                                                ? 'font-medium text-slate-600 dark:text-slate-400'
-                                                : 'font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white'
+                                                ? 'font-medium text-slate-600'
+                                                : 'font-medium text-slate-700 group-hover:text-slate-900'
                                         }`}
                                 >
                                     {student.name}
                                 </p>
                                 <span
                                     className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${student.statusColor === 'emerald'
-                                            ? 'text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30'
+                                            ? 'text-emerald-600 bg-emerald-100'
                                             : student.statusColor === 'rose'
-                                                ? 'text-rose-600 dark:text-rose-400 bg-rose-100 dark:bg-rose-900/30'
-                                                : 'text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700'
+                                                ? 'text-rose-600 bg-rose-100'
+                                                : 'text-slate-500 bg-slate-100'
                                         }`}
                                 >
                                     {student.status}
                                 </span>
                             </div>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
+                            <p className="text-xs text-slate-500 truncate">
                                 {student.submissionDate}
                             </p>
                         </div>

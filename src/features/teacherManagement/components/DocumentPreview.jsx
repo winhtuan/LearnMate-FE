@@ -7,17 +7,17 @@ export default function DocumentPreview({ document }) {
     const handleZoomOut = () => setZoom(prev => Math.max(prev - 10, 50));
 
     return (
-        <div className="flex-1 flex flex-col h-1/2 xl:h-full xl:w-7/12 border-b xl:border-b-0 xl:border-r border-slate-200 dark:border-slate-800 relative bg-slate-100 dark:bg-[#0c131a]">
+        <div className="flex-1 flex flex-col h-1/2 xl:h-full xl:w-7/12 border-b xl:border-b-0 xl:border-r border-slate-200 relative bg-slate-100#0c131a]">
             {/* Preview Toolbar */}
-            <div className="h-12 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-4 shadow-sm z-10">
+            <div className="h-12 bg-white border-b border-slate-200 flex items-center justify-between px-4 shadow-sm z-10">
                 <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-slate-500 text-lg">
                         {document.icon}
                     </span>
-                    <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                    <span className="text-sm font-semibold text-slate-700">
                         {document.filename}
                     </span>
-                    <span className="text-xs text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+                    <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
                         {document.fileSize}
                     </span>
                 </div>
@@ -26,24 +26,24 @@ export default function DocumentPreview({ document }) {
                 <div className="flex items-center gap-1">
                     <button
                         onClick={handleZoomOut}
-                        className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        className="p-1.5 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100 transition-colors"
                         title="Zoom Out"
                     >
                         <span className="material-symbols-outlined text-[20px]">remove</span>
                     </button>
-                    <span className="text-xs font-mono w-10 text-center text-slate-500 dark:text-slate-400">
+                    <span className="text-xs font-mono w-10 text-center text-slate-500">
                         {zoom}%
                     </span>
                     <button
                         onClick={handleZoomIn}
-                        className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        className="p-1.5 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100 transition-colors"
                         title="Zoom In"
                     >
                         <span className="material-symbols-outlined text-[20px]">add</span>
                     </button>
-                    <div className="w-px h-4 bg-slate-300 dark:bg-slate-700 mx-2" />
+                    <div className="w-px h-4 bg-slate-300 mx-2" />
                     <button
-                        className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                        className="p-1.5 text-slate-400 hover:text-slate-600 rounded hover:bg-slate-100 transition-colors"
                         title="Download"
                     >
                         <span className="material-symbols-outlined text-[20px]">download</span>

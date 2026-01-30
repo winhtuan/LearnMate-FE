@@ -85,10 +85,10 @@ export const tutorDashboardData = {
         }
     ],
     quickActions: [
-        { id: 1, label: "Create Class", icon: "add_circle", color: "blue" },
-        { id: 2, label: "Post Assignment", icon: "assignment", color: "purple" },
-        { id: 3, label: "Add Student", icon: "person_add", color: "orange" },
-        { id: 4, label: "View Reports", icon: "bar_chart", color: "teal" }
+        { id: 1, label: "View Classes", icon: "add_circle", color: "blue", route: "/tutorDashboard/classes" },
+        { id: 2, label: "Post Assignment", icon: "assignment", color: "purple", route: "/teacher-assignment/create" },
+        { id: 3, label: "View Student", icon: "person_add", color: "orange", route: "/tutorDashboard/class/1/students" },
+        { id: 4, label: "View Reports", icon: "bar_chart", color: "teal", route: "/tutorDashboard/statics" }
     ],
     activities: [
         {

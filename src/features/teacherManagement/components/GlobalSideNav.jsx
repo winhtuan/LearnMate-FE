@@ -1,6 +1,6 @@
 export default function GlobalSideNav({ portal, navigation, user }) {
     return (
-        <aside className="hidden xl:flex flex-col w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex-shrink-0 z-20">
+        <aside className="hidden xl:flex flex-col w-64 border-r border-slate-200 bg-white flex-shrink-0 z-20">
             {/* Portal Header */}
             <div className="p-6 flex items-center gap-3">
                 <div
@@ -9,10 +9,10 @@ export default function GlobalSideNav({ portal, navigation, user }) {
                     data-alt={`${portal.name} Logo`}
                 />
                 <div className="flex flex-col">
-                    <h1 className="text-slate-900 dark:text-white text-base font-bold leading-tight">
+                    <h1 className="text-slate-900 text-base font-bold leading-tight">
                         {portal.name}
                     </h1>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs font-medium">
+                    <p className="text-slate-500 text-xs font-medium">
                         {portal.subtitle}
                     </p>
                 </div>
@@ -25,8 +25,8 @@ export default function GlobalSideNav({ portal, navigation, user }) {
                         key={index}
                         href={item.href}
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${item.active
-                                ? 'bg-primary/10 text-primary dark:text-blue-400'
-                                : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
+                                ? 'bg-primary/10 text-primary'
+                                : 'text-slate-600 hover:bg-slate-50'
                             }`}
                     >
                         <span
@@ -44,16 +44,16 @@ export default function GlobalSideNav({ portal, navigation, user }) {
             </nav>
 
             {/* User Profile */}
-            <div className="p-4 border-t border-slate-200 dark:border-slate-800">
+            <div className="p-4 border-t border-slate-200">
                 <div className="flex items-center gap-3">
                     <div
-                        className="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-slate-200 dark:border-slate-700"
+                        className="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-slate-200"
                         style={{ backgroundImage: `url("${user.avatar}")` }}
                         data-alt={`${user.name} profile picture`}
                     />
                     <div className="flex flex-col">
-                        <p className="text-slate-900 dark:text-white text-sm font-medium">{user.name}</p>
-                        <p className="text-slate-500 dark:text-slate-400 text-xs">{user.role}</p>
+                        <p className="text-slate-900 text-sm font-medium">{user.name}</p>
+                        <p className="text-slate-500 text-xs">{user.role}</p>
                     </div>
                 </div>
             </div>

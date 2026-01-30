@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 function CurrentCourses({ courses = [] }) {
   return (
     <div>
       <div className="flex justify-between items-end mb-4 px-1">
         <h3 className="text-xl font-bold text-slate-900">Current Courses</h3>
-        <a className="text-sm font-medium text-slate-500 hover:text-primary" href="#">View All</a>
+        <Link className="text-sm font-medium text-slate-500 hover:text-primary" to="/classes">View All</Link>
       </div>
       <div className="space-y-3">
         {courses.map(course => (

@@ -30,12 +30,12 @@ export default function TutorFeedback() {
     };
 
     return (
-        <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 h-screen flex overflow-hidden">
+        <div className="bg-background-light font-display text-slate-900 h-screen flex overflow-hidden">
             {/* Global Side Navigation */}
             <GlobalSideNav portal={portal} navigation={globalNavigation} user={currentUser} />
 
             {/* Main Content Wrapper */}
-            <div className="flex flex-1 flex-col h-full min-w-0 bg-white dark:bg-slate-900">
+            <div className="flex flex-1 flex-col h-full min-w-0 bg-white">
                 {/* Top Header with Breadcrumbs */}
                 <FeedbackHeader
                     breadcrumbs={breadcrumbs}
@@ -50,7 +50,7 @@ export default function TutorFeedback() {
                     <StudentSubmissionList students={students} filterChips={filterChips} />
 
                     {/* Main Work Area: Document Preview + Grading Panel */}
-                    <main className="flex-1 flex flex-col xl:flex-row min-w-0 bg-background-light dark:bg-background-dark relative">
+                    <main className="flex-1 flex flex-col xl:flex-row min-w-0 bg-background-light relative">
                         {/* Document Preview (Left/Top) */}
                         <DocumentPreview document={currentDocument} />
 
