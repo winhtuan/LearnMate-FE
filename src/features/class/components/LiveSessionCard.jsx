@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function LiveSessionCard({ session }) {
   const { status, statusType, date, title, description, host, studentsWaiting } = session;
 
@@ -29,13 +31,13 @@ export default function LiveSessionCard({ session }) {
             </div>
 
             <div className="flex flex-wrap items-center gap-6">
-              <button className="group relative flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl font-bold text-base shadow-lg shadow-primary/40 hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]">
+              <Link to="/teacher1/liveclass" className="group relative flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl font-bold text-base shadow-lg shadow-primary/40 hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]">
                 <span className="material-symbols-outlined">videocam</span>
                 Join Room
                 <span className="absolute -top-1 -right-1 flex h-4 w-4">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40"></span>
                 </span>
-              </button>
+              </Link>
 
               <div className="flex items-center gap-3 text-sm font-medium text-slate-300">
                 <div className="flex -space-x-3">
