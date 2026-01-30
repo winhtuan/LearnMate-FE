@@ -1,4 +1,5 @@
 import React from 'react';
+import TeacherHeader from '../../../shared/components/layout/TeacherHeader';
 import MetricCard from '../components/MetricCard';
 import ActiveClassCard from '../components/ActiveClassCard';
 import ScheduleList from '../components/ScheduleList';
@@ -11,42 +12,8 @@ export default function TutorDashboard() {
 
     return (
         <div className="bg-background-light min-h-screen flex flex-col font-display text-slate-900 overflow-x-hidden">
-            {/* Top Navigation Bar */}
-            <header className="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 bg-white/80 backdrop-blur-md px-6 py-3">
-                <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-3 text-slate-900 cursor-pointer select-none">
-                        <div className="flex items-center justify-center size-8 bg-primary rounded-lg text-white">
-                            <span className="material-symbols-outlined text-[20px]">school</span>
-                        </div>
-                        <h2 className="text-lg font-bold tracking-tight">LearnMate</h2>
-                    </div>
-                    {/* Search Bar */}
-                    <div className="hidden md:flex items-center w-64 lg:w-80 h-9 bg-slate-100 rounded-lg px-3 gap-2 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
-                        <span className="material-symbols-outlined text-slate-400 text-[20px]">search</span>
-                        <input
-                            className="bg-transparent border-none outline-none w-full text-sm text-slate-700 placeholder:text-slate-400"
-                            placeholder="Search pages, classes, students..."
-                        />
-                    </div>
-                </div>
-                <div className="flex items-center gap-4">
-                    <button className="flex items-center justify-center size-9 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors relative">
-                        <span className="material-symbols-outlined text-[22px]">notifications</span>
-                        <span className="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-white"></span>
-                    </button>
-                    <button className="flex items-center justify-center size-9 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors">
-                        <span className="material-symbols-outlined text-[22px]">help</span>
-                    </button>
-                    <div className="w-px h-6 bg-slate-200 mx-1"></div>
-                    <div className="flex items-center gap-3 cursor-pointer">
-                        <div
-                            className="size-8 rounded-full bg-cover bg-center border border-slate-200"
-                            style={{ backgroundImage: `url('${user.avatar}')` }}
-                        />
-                        <span className="hidden lg:block text-sm font-medium text-slate-700">{user.name}</span>
-                    </div>
-                </div>
-            </header>
+            {/* Shared Teacher Header */}
+            <TeacherHeader activeNav="dashboard" user={user} />
 
             {/* Main Content */}
             <main className="flex-1 w-full max-w-7xl mx-auto px-6 py-8">
