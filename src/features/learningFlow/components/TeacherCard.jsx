@@ -11,7 +11,7 @@ export default function TeacherCard({ teacher, isSelected = false, onClick }) {
     return (
         <div onClick={onClick} className={`relative flex flex-col md:flex-row p-5 gap-5 rounded-xl bg-white ${isSelected ? "border-2 border-primary" : "border border-slate-200 hover:border-slate-300 hover:shadow-md"} shadow-sm transition-all cursor-pointer group ${teacher.fullyBooked ? "opacity-80" : ""}`}>
             {teacher.superTutor && (
-                <div className="absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                <div className="md:hidden absolute top-4 right-4 bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
                     <span className="material-symbols-outlined text-[14px]">bolt</span> Super Tutor
                 </div>
             )}
@@ -49,6 +49,11 @@ export default function TeacherCard({ teacher, isSelected = false, onClick }) {
                 </div>
             </div>
             <div className="flex flex-row md:flex-col justify-between items-end md:items-end border-t md:border-t-0 md:border-l border-slate-100 pt-4 md:pt-0 md:pl-5 min-w-[140px]">
+                {teacher.superTutor && (
+                    <div className="hidden md:flex bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded-full items-center gap-1 mb-2">
+                        <span className="material-symbols-outlined text-[14px]">bolt</span> Super Tutor
+                    </div>
+                )}
                 <div className="text-left md:text-right">
                     <p className="text-xs text-slate-500 uppercase font-semibold tracking-wider">Rate</p>
                     <p className="text-lg font-bold text-slate-900">{teacher.rate}<span className="text-sm font-normal text-slate-500">/hr</span></p>
