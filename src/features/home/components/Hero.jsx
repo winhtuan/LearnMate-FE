@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { studentsImages } from '../data/homeData';
 
 function Hero() {
@@ -18,10 +19,13 @@ function Hero() {
               Connect with certified world-class tutors for personalized 1-on-1 sessions. Achieve your academic goals with a schedule that fits your life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg shadow-blue-200 flex items-center justify-center gap-2 group">
+              <Link 
+                to="/tutors"
+                className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg shadow-blue-200 flex items-center justify-center gap-2 group"
+              >
                 Find a Tutor
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </button>
+              </Link>
               <button className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center">
                 Become a Tutor
               </button>

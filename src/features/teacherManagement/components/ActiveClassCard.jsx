@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ActiveClassCard({ data }) {
     const { title, time, description, status, studentCount, studentAvatars, thumbnail } = data;
 
@@ -31,10 +33,13 @@ export default function ActiveClassCard({ data }) {
                     />
                 </div>
                 <div className="flex flex-wrap gap-3 mt-2">
-                    <button className="flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-medium px-5 py-2.5 rounded-lg transition-all shadow-sm shadow-blue-500/30">
+                    <Link 
+                        to="/teacher1/liveclass"
+                        className="flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-medium px-5 py-2.5 rounded-lg transition-all shadow-sm shadow-blue-500/30"
+                    >
                         <span className="material-symbols-outlined text-[20px]">videocam</span>
                         Join Video Call
-                    </button>
+                    </Link>
                     <button className="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 font-medium px-4 py-2.5 rounded-lg hover:bg-slate-50 transition-colors">
                         <span className="material-symbols-outlined text-[20px]">content_copy</span>
                         Copy Link

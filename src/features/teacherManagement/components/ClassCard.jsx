@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 export default function ClassCard({ classData }) {
-    const { title, schedule, studentCount, status, icon, iconBg, opacity } = classData;
+    const { id, title, schedule, studentCount, status, icon, iconBg, opacity } = classData;
 
     const bgColors = {
         indigo: "bg-indigo-50 text-indigo-600",
@@ -11,12 +13,18 @@ export default function ClassCard({ classData }) {
     };
 
     return (
-        <div className={`group relative flex flex-col bg-surface-light border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all duration-200 cursor-pointer ${opacity ? 'opacity-75' : ''}`}>
+        <Link 
+            to={`/tutorDashboard/class/${id}/overview`}
+            className={`group relative flex flex-col bg-surface-light border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-primary/30 transition-all duration-200 cursor-pointer ${opacity ? 'opacity-75' : ''}`}
+        >
             <div className="flex justify-between items-start mb-4">
                 <div className={`flex items-center justify-center size-10 rounded-lg ${bgColors[iconBg]}`}>
                     <span className="material-symbols-outlined">{icon}</span>
                 </div>
-                <button className="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-gray-100 transition-colors">
+                <button 
+                    className="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-gray-100 transition-colors"
+                    onClick={(e) => e.preventDefault()}
+                >
                     <span className="material-symbols-outlined text-[20px]">more_horiz</span>
                 </button>
             </div>
@@ -41,6 +49,6 @@ export default function ClassCard({ classData }) {
                     </span>
                 )}
             </div>
-        </div>
+        </Link>
     );
 }
