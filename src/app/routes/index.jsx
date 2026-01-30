@@ -22,7 +22,6 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<HomeRoute />} />
             <Route path="/classes/*" element={<ClassRoute />} />
-            <Route path="/dashboard" element={<DashboardRoute />} />
             <Route path="/tutorRegister/*" element={<TeacherManagementRoute />} />
             <Route path="/tutorDashboard/*" element={<TeacherManagementRoute />} />
             <Route path="/admin/*" element={<AdminDashboardRoute />} />

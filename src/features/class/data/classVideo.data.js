@@ -6,7 +6,7 @@ export const classVideoData = {
   },
   
   navigation: [
-    { icon: "home", label: "Home", href: "/", active: false },
+    { icon: "home", label: "Home", href: "/studentdashboard", active: false },
     { icon: "book_2", label: "Classes", href: "/class", active: true, filled: true },
     { icon: "calendar_month", label: "Schedule", href: "/schedule", active: false },
     { icon: "chat_bubble", label: "Messages", href: "/messages", active: false },

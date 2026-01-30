@@ -160,7 +160,7 @@ export const resourcesData = [
 ];
 
 export const navigationItems = [
-  { label: "Home", icon: "home", href: "#", active: false },
+  { label: "Home", icon: "home", href: "/studentdashboard", active: false },
   { label: "Classes", icon: "book_2", href: "#", active: true },
   { label: "Schedule", icon: "calendar_month", href: "#", active: false },
   { label: "Messages", icon: "chat_bubble", href: "#", active: false }

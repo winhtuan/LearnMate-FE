@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Static Data Extraction
 const studentsImages = [
@@ -130,9 +131,9 @@ function HomePage() {
                     Find a Tutor
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </button>
-                  <button className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center">
+                  <Link to="/tutorRegister" className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center">
                     Become a Tutor
-                  </button>
+                  </Link>
                 </div>
                 <div className="mt-10 flex items-center gap-6">
                   <div className="flex -space-x-3">
