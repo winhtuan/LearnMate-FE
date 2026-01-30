@@ -9,16 +9,16 @@ export default function TutorManagementClass() {
     const [activeFilter, setActiveFilter] = useState('Active');
 
     return (
-        <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col font-display">
+        <div className="bg-background-light text-slate-900 min-h-screen flex flex-col font-display">
             {/* Top Navigation Bar */}
-            <header className="sticky top-0 z-50 w-full bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800">
+            <header className="sticky top-0 z-50 w-full bg-surface-light border-b border-gray-200">
                 <div className="px-4 md:px-8 lg:px-12 flex h-16 items-center justify-between">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary">
                             <span className="material-symbols-outlined text-2xl">school</span>
                         </div>
-                        <h2 className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">LearnMate</h2>
+                        <h2 className="text-lg font-bold tracking-tight text-slate-900">LearnMate</h2>
                     </div>
 
                     {/* Navigation Links (Desktop) */}
@@ -28,7 +28,7 @@ export default function TutorManagementClass() {
                                 key={index}
                                 className={link.active
                                     ? "text-primary font-semibold text-sm leading-normal border-b-2 border-primary py-5"
-                                    : "text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors"
+                                    : "text-slate-500 hover:text-primary text-sm font-medium transition-colors"
                                 }
                                 href={link.href}
                             >
@@ -39,17 +39,17 @@ export default function TutorManagementClass() {
 
                     {/* Right Actions */}
                     <div className="flex items-center gap-4">
-                        <button className="relative p-2 text-slate-500 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <button className="relative p-2 text-slate-500 hover:bg-gray-100 rounded-lg transition-colors">
                             <span className="material-symbols-outlined text-[24px]">notifications</span>
-                            <span className="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-surface-dark"></span>
+                            <span className="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white"></span>
                         </button>
-                        <div className="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-1"></div>
+                        <div className="h-8 w-px bg-gray-200 mx-1"></div>
                         <button className="flex items-center gap-3 group">
                             <div
-                                className="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-gray-200 dark:border-gray-700"
+                                className="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-gray-200"
                                 style={{ backgroundImage: `url('${user.avatar}')` }}
                             />
-                            <span className="hidden lg:block text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">
+                            <span className="hidden lg:block text-sm font-medium text-slate-700 group-hover:text-primary transition-colors">
                                 {user.name}
                             </span>
                             <span className="material-symbols-outlined text-slate-400 text-sm hidden lg:block">expand_more</span>
@@ -65,8 +65,8 @@ export default function TutorManagementClass() {
                     {/* Title Section */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div className="space-y-1">
-                            <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{pageTitle}</h1>
-                            <p className="text-slate-500 dark:text-slate-400 text-base">{pageDescription}</p>
+                            <h1 className="text-3xl font-bold tracking-tight text-slate-900">{pageTitle}</h1>
+                            <p className="text-slate-500 text-base">{pageDescription}</p>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@ export default function TutorManagementClass() {
                                     <span className="material-symbols-outlined text-slate-400 text-[20px]">search</span>
                                 </div>
                                 <input
-                                    className="block w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-surface-dark text-slate-900 dark:text-white pl-10 pr-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-400 shadow-sm transition-all"
+                                    className="block w-full rounded-lg border-gray-300 bg-white text-slate-900 pl-10 pr-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-400 shadow-sm transition-all"
                                     placeholder="Search for a class..."
                                     type="text"
                                     value={searchQuery}
@@ -106,7 +106,7 @@ export default function TutorManagementClass() {
                     ))}
 
                     {/* Empty State / New Card Placeholder */}
-                    <div className="group relative flex flex-col justify-center items-center bg-gray-50 dark:bg-surface-dark/30 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-5 min-h-[200px] hover:border-primary hover:bg-white dark:hover:bg-surface-dark transition-all duration-200 cursor-pointer text-slate-400 hover:text-primary">
+                    <div className="group relative flex flex-col justify-center items-center bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl p-5 min-h-[200px] hover:border-primary hover:bg-white transition-all duration-200 cursor-pointer text-slate-400 hover:text-primary">
                         <span className="material-symbols-outlined text-[32px] mb-2 transition-transform group-hover:scale-110">add_circle</span>
                         <span className="text-sm font-semibold">Create another class</span>
                     </div>

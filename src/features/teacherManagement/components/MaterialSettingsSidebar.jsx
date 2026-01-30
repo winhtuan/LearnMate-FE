@@ -6,9 +6,9 @@ export default function MaterialSettingsSidebar({ settings }) {
     const [notifyStudents, setNotifyStudents] = useState(settings.notifyStudents.defaultValue);
 
     return (
-        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-            <div className="p-5 border-b border-slate-100 dark:border-slate-800">
-                <h3 className="text-base font-bold dark:text-white">Material Settings</h3>
+        <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div className="p-5 border-b border-slate-100">
+                <h3 className="text-base font-bold">Material Settings</h3>
             </div>
             <div className="p-5 flex flex-col gap-6">
                 {/* Target Class */}
@@ -19,7 +19,7 @@ export default function MaterialSettingsSidebar({ settings }) {
                     <select
                         value={targetClass}
                         onChange={(e) => setTargetClass(e.target.value)}
-                        className="w-full text-sm bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg p-2 focus:ring-primary"
+                        className="w-full text-sm bg-slate-50 border-slate-200 rounded-lg p-2 focus:ring-primary"
                     >
                         {settings.targetClasses.map((className, index) => (
                             <option key={index} value={className}>{className}</option>
@@ -37,8 +37,8 @@ export default function MaterialSettingsSidebar({ settings }) {
                             <label
                                 key={index}
                                 className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-all ${visibility === option.value
-                                        ? 'border border-primary/20 bg-primary/5 dark:bg-primary/10'
-                                        : 'border border-slate-200 dark:border-slate-700'
+                                        ? 'border border-primary/20 bg-primary/5'
+                                        : 'border border-slate-200'
                                     }`}
                             >
                                 <input
@@ -50,7 +50,7 @@ export default function MaterialSettingsSidebar({ settings }) {
                                     className="text-primary focus:ring-primary"
                                 />
                                 <div className="flex flex-col">
-                                    <span className="text-sm font-semibold dark:text-white">
+                                    <span className="text-sm font-semibold">
                                         {option.label}
                                     </span>
                                     <span className="text-[10px] text-[#4e7397]">
@@ -65,7 +65,7 @@ export default function MaterialSettingsSidebar({ settings }) {
                 {/* Notification Toggle */}
                 <div className="flex items-center justify-between py-2">
                     <div className="flex flex-col">
-                        <span className="text-sm font-semibold dark:text-white">
+                        <span className="text-sm font-semibold">
                             {settings.notifyStudents.label}
                         </span>
                         <span className="text-xs text-[#4e7397]">
@@ -79,14 +79,14 @@ export default function MaterialSettingsSidebar({ settings }) {
                             onChange={(e) => setNotifyStudents(e.target.checked)}
                             className="sr-only peer"
                         />
-                        <div className="w-11 h-6 bg-slate-200 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary" />
+                        <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary" />
                     </label>
                 </div>
 
-                <hr className="border-slate-100 dark:border-slate-800" />
+                <hr className="border-slate-100" />
 
                 {/* Help / Guidelines */}
-                <div className="flex items-start gap-2 bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
+                <div className="flex items-start gap-2 bg-slate-50 p-3 rounded-lg">
                     <span className="material-symbols-outlined text-primary text-lg">info</span>
                     <p className="text-[11px] text-[#4e7397]">{settings.helpText}</p>
                 </div>

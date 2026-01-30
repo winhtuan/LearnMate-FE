@@ -41,7 +41,7 @@ export default function UploadMaterial() {
     };
 
     return (
-        <div className="bg-background-light dark:bg-background-dark min-h-screen font-display text-[#0e141b] dark:text-slate-200">
+        <div className="bg-background-light min-h-screen font-display text-[#0e141b]">
             <div className="flex flex-col min-h-screen">
                 <MaterialHeader navigation={navigation} user={user} />
 
@@ -53,7 +53,7 @@ export default function UploadMaterial() {
                         <div className="flex-1 flex flex-col gap-6">
                             {/* Page Heading */}
                             <div className="flex flex-col gap-1">
-                                <h1 className="text-[#0e141b] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">
+                                <h1 className="text-[#0e141b] text-3xl font-black leading-tight tracking-[-0.033em]">
                                     {pageTitle}
                                 </h1>
                                 <p className="text-[#4e7397] text-base">{pageDescription}</p>
@@ -64,9 +64,9 @@ export default function UploadMaterial() {
 
                             {/* Pending Uploads Section */}
                             {pendingUploads.length > 0 && (
-                                <div className="flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
-                                    <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
-                                        <h2 className="text-[#0e141b] dark:text-white text-lg font-bold">
+                                <div className="flex flex-col bg-white rounded-xl shadow-sm border border-slate-200">
+                                    <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+                                        <h2 className="text-[#0e141b] text-lg font-bold">
                                             Pending Uploads ({pendingUploads.length})
                                         </h2>
                                         <button
@@ -76,7 +76,7 @@ export default function UploadMaterial() {
                                             Clear all
                                         </button>
                                     </div>
-                                    <div className="divide-y divide-slate-100 dark:divide-slate-800">
+                                    <div className="divide-y divide-slate-100">
                                         {pendingUploads.map((upload) => (
                                             <PendingUploadItem
                                                 key={upload.id}

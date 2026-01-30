@@ -8,7 +8,7 @@ export default function CreateAssignment() {
   const { user, navigation } = assignmentTrackingAllData;
 
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col transition-colors duration-300">
+    <div className="bg-background-light font-display text-slate-900 antialiased min-h-screen flex flex-col transition-colors duration-300">
       {/* Top Main Navigation */}
       <TopHeader user={user} navigation={navigation} />
 

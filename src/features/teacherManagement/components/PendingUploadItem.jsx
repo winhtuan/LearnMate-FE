@@ -17,7 +17,7 @@ export default function PendingUploadItem({ upload, categories, onRemove }) {
                         <span className="material-symbols-outlined">{upload.icon}</span>
                     </div>
                     <div className="overflow-hidden">
-                        <p className="text-sm font-semibold truncate dark:text-white">
+                        <p className="text-sm font-semibold truncate">
                             {upload.filename}
                         </p>
                         <p className="text-xs text-[#4e7397]">
@@ -29,7 +29,7 @@ export default function PendingUploadItem({ upload, categories, onRemove }) {
                     <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-md focus:ring-primary"
+                        className="text-xs bg-slate-50 border-slate-200 rounded-md focus:ring-primary"
                     >
                         {categories.map((category, index) => (
                             <option key={index} value={category}>{category}</option>
@@ -43,7 +43,7 @@ export default function PendingUploadItem({ upload, categories, onRemove }) {
                     </button>
                 </div>
             </div>
-            <div className="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
                 <div
                     className={`${getProgressBarColor()} h-full rounded-full transition-all duration-300`}
                     style={{ width: `${upload.progress}%` }}
