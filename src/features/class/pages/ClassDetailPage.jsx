@@ -1,14 +1,14 @@
 import { useParams } from 'react-router-dom';
-import { useClassDetail } from '../hooks/useClassDetail';
-import Sidebar from '../components/Sidebar';
-import Breadcrumb from '../components/Breadcrumb';
-import SearchBar from '../components/SearchBar';
-import HeroBanner from '../components/HeroBanner';
-import TabNavigation from '../components/TabNavigation';
-import NextUpSection from '../components/NextUpSection';
-import ActiveAssignmentsSection from '../components/ActiveAssignmentsSection';
-import InstructorCard from '../components/InstructorCard';
-import ResourcesList from '../components/ResourcesList';
+import { useClassDetail } from '@/features/class/hooks/useClassDetail';
+import Sidebar from '@/features/class/components/Sidebar';
+import Breadcrumb from '@/shared/components/ui/Breadcrumb';
+import SearchBar from '@/features/class/components/SearchBar';
+import HeroBanner from '@/features/class/components/HeroBanner';
+import TabNavigation from '@/features/class/components/TabNavigation';
+import NextUpSection from '@/features/class/components/NextUpSection';
+import ActiveAssignmentsSection from '@/features/class/components/ActiveAssignmentsSection';
+import InstructorCard from '@/features/class/components/InstructorCard';
+import ResourcesList from '@/features/class/components/ResourcesList';
 
 export default function ClassDetailPage() {
   const { id } = useParams();

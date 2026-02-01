@@ -1,6 +1,6 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
-import { features } from '../data/homeData';
+import { features } from '@/features/home/data/homeData';
 
 function Features() {
   return (
@@ -20,4 +20,5 @@ function Features() {
   );
 }
 
-export default Features;
+// Memoize to prevent re-renders (rerender-memo)
+export default React.memo(Features);

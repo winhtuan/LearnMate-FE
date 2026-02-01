@@ -31,7 +31,7 @@ export default function LiveSessionCard({ session }) {
             </div>
 
             <div className="flex flex-wrap items-center gap-6">
-              <Link to="/teacher1/liveclass" className="group relative flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl font-bold text-base shadow-lg shadow-primary/40 hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]">
+              <Link to="/teacher-ops/live-class" className="group relative flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl font-bold text-base shadow-lg shadow-primary/40 hover:bg-primary/90 transition-all hover:scale-[1.02] active:scale-[0.98]">
                 <span className="material-symbols-outlined">videocam</span>
                 Join Room
                 <span className="absolute -top-1 -right-1 flex h-4 w-4">
