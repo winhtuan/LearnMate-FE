@@ -1,10 +1,10 @@
 export const teacherNavigation = [
-  { label: "Dashboard", href: "/tutorDashboard/dashboard", key: "dashboard" },
-  { label: "Classes", href: "/tutorDashboard/classes", key: "classes" },
-  { label: "Schedule", href: "/teacher1/scheduleAvailability", key: "schedule" },
-  { label: "Students", href: "/teacher1/studentmanageview", key: "students" },
-  { label: "Assignments", href: "/teacher-assignment/tracking", key: "assignments" },
-  { label: "Performance", href: "/teacher1/teacherperformance", key: "performance" }
+  { label: "Dashboard", href: "/tutor/dashboard", key: "dashboard" },
+  { label: "Classes", href: "/tutor/classes", key: "classes" },
+  { label: "Schedule", href: "/teacher-ops/schedule", key: "schedule" },
+  { label: "Students", href: "/teacher-ops/students", key: "students" },
+  { label: "Assignments", href: "/teacher-assignments", key: "assignments" },
+  { label: "Performance", href: "/teacher-ops/performance", key: "performance" }
 ];
 
 export const defaultUser = {

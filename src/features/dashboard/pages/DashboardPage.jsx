@@ -1,71 +1,63 @@
 import { useEffect } from 'react';
 import Header from '@/shared/components/layout/Header';
-import WelcomeBanner from '../components/WelcomeBanner';
-import WeeklySchedule from '../components/WeeklySchedule';
-import CurrentCourses from '../components/CurrentCourses';
-import QuickActions from '../components/QuickActions';
-import RecentNotifications from '../components/RecentNotifications';
-import StudyStreak from '../components/StudyStreak';
+import QuickActions from '@/features/dashboard/components/QuickActions';
+import StudyStreak from '@/features/dashboard/components/StudyStreak';
 
-// Import custom hooks
-import { useDashboardData } from '../hooks/useDashboardData';
-import { useCourses } from '../hooks/useCourses';
-import { useSchedule } from '../hooks/useSchedule';
-import { useNotifications } from '../hooks/useNotifications';
+// Import Widgets (Containers)
+import DashboardWelcomeWidget from '@/features/dashboard/components/widgets/DashboardWelcomeWidget';
+import WeeklyScheduleWidget from '@/features/dashboard/components/widgets/WeeklyScheduleWidget';
+import CurrentCoursesWidget from '@/features/dashboard/components/widgets/CurrentCoursesWidget';
+import NotificationsWidget from '@/features/dashboard/components/widgets/NotificationsWidget';
 
-// Import static data
-import { quickActionsData } from '../data/quickActions.data';
+// Import static data for components that don't need async fetching yet
+import { quickActionsData } from '@/features/dashboard/data/quickActions.data';
+import { useDashboardData } from "@/features/dashboard/hooks/useDashboardData"; // Still needed for Streak if not widgetized
 
 function DashboardPage() {
-  // Fetch data using custom hooks
-  const { data: dashboardData, loading: dashboardLoading } = useDashboardData();
-  const { courses, loading: coursesLoading } = useCourses();
-  const { schedule, loading: scheduleLoading } = useSchedule();
-  const { notifications, loading: notificationsLoading } = useNotifications();
+  // UseDashboardData might still be needed for StudyStreak if we didn't widgetize it.
+  // For this refactor, let's assume StudyStreak takes simple props or we reuse the hook just for it.
+  // Ideally, StudyStreak should also be a widget.
+  const { data: dashboardData } = useDashboardData();
+  const user = dashboardData?.user || {};
 
   useEffect(() => {
     document.documentElement.classList.remove('dark');
     document.documentElement.classList.add('light');
   }, []);
 
-  // Show loading state while data is being fetched
-  const isLoading = dashboardLoading || coursesLoading || scheduleLoading || notificationsLoading;
-
-  if (isLoading) {
-    return (
-      <div className="bg-background-light font-display text-slate-900 min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-          <p className="mt-4 text-slate-600">Loading dashboard...</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Extract user data and stats from dashboardData
-  const user = dashboardData?.user || {};
-  const stats = dashboardData?.stats || {};
-
   return (
     <div className="bg-background-light font-display text-slate-900 min-h-screen flex flex-col">
+      {/* 
+        Ideally Header should also be context-aware or take minimal props. 
+        For now we pass the avatar URL if available, but Header likely handles its own state too.
+      */}
       <Header profileImageUrl={user.profileImageUrl} />
-      <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <WelcomeBanner 
-          greeting={user.greeting}
-          studentName={user.studentName}
-          currentDay={user.currentDay}
-          currentDate={user.currentDate}
-          currentTerm={user.currentTerm}
-          stats={stats}
-        />
+      
+      <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 transition-all duration-300">
+        
+        {/* Top Section: Welcome Banner (Self-loading) */}
+        <DashboardWelcomeWidget />
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Main Content Area */}
           <div className="lg:col-span-2 space-y-8">
-            <WeeklySchedule scheduleData={schedule} />
-            <CurrentCourses courses={courses} />
+            <WeeklyScheduleWidget />
+            <CurrentCoursesWidget />
           </div>
+          
+          {/* Sidebar Area */}
           <div className="space-y-8">
             <QuickActions actions={quickActionsData} />
-            <RecentNotifications notifications={notifications} />
+            
+            <NotificationsWidget />
+            
+            {/* 
+               If StudyStreak is simple, we keep it here. 
+               Or we could make a StudyStreakWidget. 
+               For now, we pass the data we managed to get (or undefined if loading).
+               Since WelcomeWidget loads the same hook, it might cache, or we accept prop drilling for small things.
+            */}
             <StudyStreak streak={user.studyStreak} />
           </div>
         </div>
@@ -75,4 +67,3 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
-

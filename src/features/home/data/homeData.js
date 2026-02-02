@@ -80,3 +80,29 @@ export const tutors = [
 export const platformLinks = ["Find a Tutor", "Pricing", "Groups", "For Businesses"];
 export const supportLinks = ["Help Center", "Trust & Safety", "Contact Us", "Refund Policy"];
 export const companyLinks = ["About Us", "Careers", "Press", "Partners"];
+
+export const navigationLinks = [
+  { label: "Find Tutors", href: "/tutors", primary: true },
+  { label: "How it Works", href: "#how-it-works", primary: false },
+  { label: "Resources", href: "#resources", primary: false },
+  { label: "Pricing", href: "#pricing", primary: false }
+];
+
+export const footerData = {
+  description: "Connecting curious minds with world-class experts since 2020. Making education accessible, personalized, and engaging for everyone, everywhere."
+};
+
+export const ctaData = {
+  title: "Ready to start your learning journey?",
+  description: "Join thousands of students who are already achieving their academic goals with LearnMate.",
+  buttons: [
+    { label: "Get Started Today", variant: "primary" },
+    { label: "Schedule a Demo", variant: "secondary" }
+  ]
+};
+
+export const socialLinks = [
+  { name: "Twitter", icon: "twitter", url: "#" },
+  { name: "LinkedIn", icon: "linkedin", url: "#" },
+  { name: "Facebook", icon: "facebook", url: "#" }
+];

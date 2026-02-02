@@ -1,23 +1,23 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AdminPage from '@/features/admin_dashboard/pages/admin_page';
-import UserManagementPage from '@/features/admin_dashboard/pages/user_management';
-import ViolationManagementPage from '@/features/admin_dashboard/pages/violation_management';
-import AuditLogPage from '@/features/admin_dashboard/pages/audit_log';
-import ReportManagementPage from '@/features/admin_dashboard/pages/report_management';
-import SettingPage from '@/features/admin_dashboard/pages/setting';
-import ApprovePage from '@/features/admin_dashboard/pages/approve';
+import AdminDashboardPage from '@/features/admin_dashboard/pages/AdminDashboardPage';
+import UserManagementPage from '@/features/admin_dashboard/pages/UserManagementPage';
+import ViolationManagementPage from '@/features/admin_dashboard/pages/ViolationManagementPage';
+import AuditLogPage from '@/features/admin_dashboard/pages/AuditLogPage';
+import ReportManagementPage from '@/features/admin_dashboard/pages/ReportManagementPage';
+import SettingsPage from '@/features/admin_dashboard/pages/SettingsPage';
+import ApprovalPage from '@/features/admin_dashboard/pages/ApprovalPage';
 
 const AdminDashboardRoute = () => {
     return (
         <Routes>
-            <Route index element={<AdminPage />} />
-            <Route path="approve" element={<ApprovePage />} />
+            <Route index element={<AdminDashboardPage />} />
+            <Route path="approve" element={<ApprovalPage />} />
             <Route path="users" element={<UserManagementPage />} />
             <Route path="violations" element={<ViolationManagementPage />} />
             <Route path="logs" element={<AuditLogPage />} />
             <Route path="reports" element={<ReportManagementPage />} />
-            <Route path="settings" element={<SettingPage />} />
+            <Route path="settings" element={<SettingsPage />} />
             {/* Add more admin routes here as needed */}
         </Routes>
     );
