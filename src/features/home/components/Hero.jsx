@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { studentsImages } from '../data/homeData';
+import StudentAvatars from './StudentAvatars';
 
 function Hero() {
   return (
@@ -26,19 +26,11 @@ function Hero() {
                 Find a Tutor
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
-              <button className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center">
+              <Link to="/tutor" className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center">
                 Become a Tutor
-              </button>
+              </Link>
             </div>
-            <div className="mt-10 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {studentsImages.map((src, index) => (
-                  <img key={index} alt="Student" className="size-10 rounded-full border-2 border-white object-cover" src={src} />
-                ))}
-                <div className="size-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-600">+10k</div>
-              </div>
-              <p className="text-sm text-slate-500 font-medium">Join 10,000+ students already learning</p>
-            </div>
+            <StudentAvatars />
           </div>
           <div className="relative">
             <div className="absolute -top-12 -right-12 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
@@ -62,4 +54,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default React.memo(Hero);

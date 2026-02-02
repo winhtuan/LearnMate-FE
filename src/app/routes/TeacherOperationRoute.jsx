@@ -1,27 +1,25 @@
 import { Routes, Route } from "react-router-dom";
-import TeacherLayout from "../../features/teacher-operation/components/TeacherLayout";
-import DetailStudent from "../../features/teacher-operation/pages/detailstudent";
-import StudentManageView from "../../features/teacher-operation/pages/studentmanageview";
-import ScheduleAvailability from "../../features/teacher-operation/pages/scheduleAvailability";
-import TrialLessonRequest from "../../features/teacher-operation/pages/triallessonrequest";
 
-import LiveClass from "../../features/teacher-operation/pages/liveclass";
-
-import TeacherPerformance from "../../features/teacher-operation/pages/teacherperformance";
-
-import Earnings from "../../features/teacher-operation/pages/earning";
+import StudentDetailPage from '@/features/teacher/pages/operation/StudentDetailPage';
+import TeacherSidebar from '@/features/teacher/components/operation/TeacherLayout';
+import StudentManageView from "@/features/teacher/pages/operation/studentmanageview";
+import ScheduleAvailability from "@/features/teacher/pages/operation/scheduleAvailability";
+import TrialLessonRequest from "@/features/teacher/pages/operation/triallessonrequest";
+import LiveClass from "@/features/teacher/pages/operation/liveclass";
+import TeacherPerformance from "@/features/teacher/pages/operation/teacherperformance";
+import Earnings from "@/features/teacher/pages/operation/earning";
 
 const TeacherOperationRoute = () => {
     return (
         <Routes>
-            <Route element={<TeacherLayout />}>
-                <Route path="student-profile" element={<DetailStudent />} />
-                <Route path="studentmanageview" element={<StudentManageView />} />
-                <Route path="scheduleAvailability" element={<ScheduleAvailability />} />
-                <Route path="triallessonrequest" element={<TrialLessonRequest />} />
-                <Route path="liveclass" element={<LiveClass />} />
-                <Route path="teacherperformance" element={<TeacherPerformance />} />
-                <Route path="earning" element={<Earnings />} />
+            <Route path="/" element={<TeacherSidebar />}>
+                <Route path="students/:studentId" element={<StudentDetailPage />} />
+                <Route path="students" element={<StudentManageView />} />
+                <Route path="schedule" element={<ScheduleAvailability />} />
+                <Route path="trial-requests" element={<TrialLessonRequest />} />
+                <Route path="live-class" element={<LiveClass />} />
+                <Route path="performance" element={<TeacherPerformance />} />
+                <Route path="earnings" element={<Earnings />} />
             </Route>
         </Routes>
     );

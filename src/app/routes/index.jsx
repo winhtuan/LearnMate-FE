@@ -8,11 +8,11 @@ import ClassRoute from "./ClassRoute";
 import ConnectTeacherRoute from "./ConnectTeacherRoute";
 import TrialBookingRoute from "./TrialBookingRoute";
 import NotificationRoute from "./NotificationRoute";
-import StudentProfilePage from "../../features/learningFlow/pages/StudentProfilePage";
-import EditStudentProfilePage from "../../features/learningFlow/pages/EditStudentProfilePage";
-import TopicBasedFlashcardPage from "../../features/learningFlow/pages/TopicBasedFlashcardPage";
-import EnhancedFlashcardStudyPage from "../../features/learningFlow/pages/EnhancedFlashcardStudyPage";
-import TrialManagementPage from "../../features/learningFlow/pages/TrialManagementPage";
+import StudentProfilePage from "@/features/learningFlow/pages/StudentProfilePage";
+import EditStudentProfilePage from "@/features/learningFlow/pages/EditStudentProfilePage";
+import TopicBasedFlashcardPage from "@/features/learningFlow/pages/TopicBasedFlashcardPage";
+import EnhancedFlashcardStudyPage from "@/features/learningFlow/pages/EnhancedFlashcardStudyPage";
+import TrialManagementPage from "@/features/learningFlow/pages/TrialManagementPage";
 
 import TeacherOperationRoute from "./TeacherOperationRoute";
 import TeacherAssignmentRoute from "./TeacherAssignmentRoute";
@@ -22,13 +22,14 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<HomeRoute />} />
             <Route path="/classes/*" element={<ClassRoute />} />
-            <Route path="/tutorRegister/*" element={<TeacherManagementRoute />} />
-            <Route path="/tutorDashboard/*" element={<TeacherManagementRoute />} />
+            {/* Consolidated Tutor Routes */}
+            <Route path="/tutor/*" element={<TeacherManagementRoute />} />
+            
             <Route path="/admin/*" element={<AdminDashboardRoute />} />
-            <Route path="/teacher1/*" element={<TeacherOperationRoute />} />
-            <Route path="/teacher-assignment/*" element={<TeacherAssignmentRoute />} />
-            <Route path="/studentdashboard" element={<DashboardRoute />} />
-            //Learning-flow
+            <Route path="/teacher-ops/*" element={<TeacherOperationRoute />} />
+            <Route path="/teacher-assignments/*" element={<TeacherAssignmentRoute />} />
+            <Route path="/dashboard" element={<DashboardRoute />} />
+            
             <Route path="/tutors/*" element={<ConnectTeacherRoute />} />
             <Route path="/student-profile" element={<StudentProfilePage />} />
             <Route path="/student-profile/edit" element={<EditStudentProfilePage />} />
