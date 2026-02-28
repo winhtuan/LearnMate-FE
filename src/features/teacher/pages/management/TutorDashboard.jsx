@@ -1,5 +1,4 @@
-import React from 'react';
-import TeacherHeader from '@/shared/components/layout/TeacherHeader';
+import TeacherHeader from '@/shared/layout/TeacherHeader';
 import MetricCard from '@/features/teacher/components/management/MetricCard';
 import ActiveClassCard from '@/features/teacher/components/management/ActiveClassCard';
 import ScheduleList from '@/features/teacher/components/management/ScheduleList';

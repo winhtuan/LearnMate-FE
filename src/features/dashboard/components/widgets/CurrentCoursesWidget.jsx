@@ -1,8 +1,6 @@
-import { useCourses } from '../../hooks/useCourses';
 import CurrentCourses from '../CurrentCourses';
 
-export default function CurrentCoursesWidget() {
-  const { courses, loading } = useCourses();
+export default function CurrentCoursesWidget({ courses, loading }) {
 
   if (loading) {
     return (

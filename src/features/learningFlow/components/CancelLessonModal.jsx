@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function CancelLessonModal({ isOpen, onClose, tutor, onConfirm }) {
     if (!isOpen || !tutor) return null;

@@ -1,8 +1,6 @@
-import { useSchedule } from '../../hooks/useSchedule';
 import WeeklySchedule from '../WeeklySchedule';
 
-export default function WeeklyScheduleWidget() {
-  const { schedule, loading } = useSchedule();
+export default function WeeklyScheduleWidget({ schedule, loading }) {
 
   if (loading) {
      return (

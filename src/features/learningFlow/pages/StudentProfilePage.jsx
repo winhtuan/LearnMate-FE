@@ -1,14 +1,16 @@
-import Header from "../../../shared/components/Header";
+import StudentHeader from '@/shared/layout/StudentHeader';
 import { studentProfileData } from "../data/studentProfile.data";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '@/app/context/AuthContext';
 
 export default function StudentProfilePage() {
     const navigate = useNavigate();
-    const { user, completedCourses } = studentProfileData;
+    const { user } = useAuth();
+    const { completedCourses } = studentProfileData;
 
     return (
         <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-light font-display text-slate-900 selection:bg-primary/20 selection:text-primary">
-            <Header activeTab="" />
+            <StudentHeader activeTab="" />
             <main className="flex-1 py-8 sm:py-12">
                 <div className="mx-auto flex max-w-5xl flex-col px-4 sm:px-6 lg:px-8">
                     {/* Profile Header */}

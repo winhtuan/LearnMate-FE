@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import TeacherHeader from '@/shared/components/layout/TeacherHeader';
+import { useState } from 'react';
+import TeacherHeader from '@/shared/layout/TeacherHeader';
 import MaterialPageHeader from '@/features/teacher/components/management/MaterialPageHeader';
 import MaterialSettingsSidebar from '@/features/teacher/components/management/MaterialSettingsSidebar';
 import FoldersNavigationCard from '@/features/teacher/components/management/FoldersNavigationCard';

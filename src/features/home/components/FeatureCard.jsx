@@ -1,4 +1,3 @@
-import React from 'react';
 
 function FeatureCard({ icon, title, description }) {
   return (

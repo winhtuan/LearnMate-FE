@@ -1,4 +1,3 @@
-import React from 'react';
 import StepIndicator from '@/features/teacher/components/management/StepIndicator';
 import FileUpload from '@/features/teacher/components/management/FileUpload';
 import ProfilePreview from '@/features/teacher/components/management/ProfilePreview';

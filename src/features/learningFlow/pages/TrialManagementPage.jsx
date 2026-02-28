@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../../../shared/components/Header"; // Assuming shared Header is available/compatible or we build a local header as per HTML
 import { trialsData, trialTabs } from "../data/trials.data";
 import TrialCard from "../components/TrialCard";
 import TrialFilterTabs from "../components/TrialFilterTabs";

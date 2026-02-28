@@ -1,5 +1,4 @@
-import React from 'react';
-import Header from '@/features/admin_dashboard/components/Header';
+import AdminHeader from '@/shared/layout/AdminHeader';
 import Sidebar from '@/features/admin_dashboard/components/Sidebar';
 import StatCard from '@/features/admin_dashboard/components/StatCard';
 import UserGrowthChart from '@/features/admin_dashboard/components/UserGrowthChart';
@@ -13,7 +12,7 @@ const AdminDashboardPage = () => {
 
     return (
         <div className="bg-background-light text-[#121516] antialiased h-screen flex flex-col overflow-hidden">
-            <Header />
+            <AdminHeader />
             <div className="flex flex-1 pt-16 overflow-hidden">
                 <Sidebar />
                 <main className="flex-1 ml-64 overflow-y-auto p-8 bg-background-light">

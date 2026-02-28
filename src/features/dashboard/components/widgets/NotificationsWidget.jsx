@@ -1,8 +1,6 @@
-import { useNotifications } from '../../hooks/useNotifications';
 import RecentNotifications from '../RecentNotifications';
 
-export default function NotificationsWidget() {
-  const { notifications, loading } = useNotifications();
+export default function NotificationsWidget({ notifications, loading }) {
 
   // Notifications usually don't block the UI as hard, but nice to have a small skeleton or just pass loading
   if (loading) {

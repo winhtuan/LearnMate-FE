@@ -1,5 +1,4 @@
-import React from 'react';
-import TeacherHeader from '@/shared/components/layout/TeacherHeader';
+import TeacherHeader from '@/shared/layout/TeacherHeader';
 import ClassHeader from '@/features/teacher/components/management/ClassHeader';
 import ClassDetailLayout from '@/features/teacher/components/management/ClassDetailLayout';
 import PageTabs from '@/features/teacher/components/assignment/PageTabs';
