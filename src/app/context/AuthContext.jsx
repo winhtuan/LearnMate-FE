@@ -1,25 +1,69 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
-// Mock student — swap for a real /api/me fetch when backend is ready
-const MOCK_USER = {
-  name: "Alex Johnson",
-  firstName: "Alex",
-  role: "Student",
-  status: "Active",
-  avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAcBxWRUssd0B1giLhk-uuUyEThX-IH4vdgzJKbqGhL55iyl2-_e1Xz2ipAiRhi91xsagqC01eeVV-3pN41l_8X_rFkoXziCy9hkpJ5dFgj6VwDouGYVcS6yDHdXRMvOk6yCVPKJ7uwXThqfgtfcVaFrqe5wIYC-zA9KgZKMcxvSRTw1n5ExSgXGMbhGOh-tvVlMN7uXF98TKKlWKKXffqQXYBJ9_rw68k3uiQib243bgn8PAVurLtjhu-D5hXjqRoi9eQ-GH1QfyM",
-  email: "alex.j@university.edu",
-  phone: "+1 (555) 012-3456",
-  dateJoined: "September 12, 2023",
-  language: "English (US)",
-  studyStreak: "12 Days 🔥",
-};
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5189/api";
 
 export function AuthProvider({ children }) {
-  const [user] = useState(MOCK_USER);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  console.log("[AuthProvider] render — loading:", loading, "user:", !!user);
+
+  useEffect(() => {
+    const token =
+      localStorage.getItem("idToken") || localStorage.getItem("access_token");
+
+    console.log("[AuthProvider] useEffect — token present:", !!token);
+
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+    fetch(`${API_BASE}/auth/me`, {
+      headers: { Authorization: `Bearer ${token}` },
+      signal: controller.signal,
+    })
+      .then((r) => {
+        if (!r.ok) {
+          if (r.status === 401) {
+            localStorage.removeItem("idToken");
+            localStorage.removeItem("access_token");
+            localStorage.removeItem("refresh_token");
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("refreshToken");
+          }
+          throw new Error("Failed to fetch current user");
+        }
+        return r.json();
+      })
+      .then((data) => {
+        setUser(data);
+      })
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          console.error("auth/me error:", err);
+        }
+        setUser(null);
+      })
+      .finally(() => {
+        clearTimeout(timeoutId);
+        setLoading(false);
+      });
+
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ user, setUser, loading }}>
       {children}
     </AuthContext.Provider>
   );
