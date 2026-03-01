@@ -1,4 +1,3 @@
-import React from 'react';
 import StudentProfileHeader from '@/features/teacher/components/operation/StudentProfileHeader';
 import NavigationTabs from '@/features/teacher/components/operation/NavigationTabs';
 import NoteInput from '@/features/teacher/components/operation/NoteInput';

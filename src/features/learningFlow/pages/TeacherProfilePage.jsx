@@ -1,4 +1,4 @@
-import Header from "../../../shared/components/Header";
+import StudentHeader from '@/shared/layout/StudentHeader';
 import TeacherHero from "../components/TeacherHero";
 import TeacherStats from "../components/TeacherStats";
 import TeacherAbout from "../components/TeacherAbout";
@@ -9,7 +9,7 @@ export default function TeacherProfilePage() {
     return (
         <div className="bg-background-light font-display min-h-screen">
             {/* Navigation - Reusing Header component */}
-            <Header activeTab="tutors" />
+            <StudentHeader activeTab="tutors" />
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

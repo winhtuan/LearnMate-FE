@@ -1,6 +1,5 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
-import TeacherHeader from '@/shared/components/layout/TeacherHeader';
+import TeacherHeader from '@/shared/layout/TeacherHeader';
 import FeedbackHeader from '@/features/teacher/components/management/FeedbackHeader';
 import GradingPanel from '@/features/teacher/components/management/GradingPanel';
 import DocumentPreview from '@/features/teacher/components/management/DocumentPreview';

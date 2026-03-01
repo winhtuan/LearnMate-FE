@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "../../../shared/components/Header";
+import StudentHeader from '@/shared/layout/StudentHeader';
 import FilterBar from "../components/FilterBar";
 import TeacherCard from "../components/TeacherCard";
 import TeacherDetailPanel from "../components/TeacherDetailPanel";
@@ -40,7 +40,7 @@ export default function ConnectTeacherPage() {
 
     return (
         <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-            <Header activeTab="tutors" />
+            <StudentHeader activeTab="tutors" />
             <main className="flex-1 w-full max-w-[1400px] mx-auto p-6 lg:px-10 lg:py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div className="lg:col-span-8 flex flex-col gap-6">
                     <div className="flex flex-col gap-4">

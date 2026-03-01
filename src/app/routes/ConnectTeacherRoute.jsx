@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import ConnectTeacherPage from "../../features/learningFlow/pages/ConnectTeacherPage";
-import TeacherProfilePage from "../../features/learningFlow/pages/TeacherProfilePage";
+import ConnectTeacherPage from "@/features/learningFlow/pages/ConnectTeacherPage";
+import TeacherProfilePage from "@/features/learningFlow/pages/TeacherProfilePage";
 
 const ConnectTeacherRoute = () => {
     return (

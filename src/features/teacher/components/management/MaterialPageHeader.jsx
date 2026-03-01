@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function MaterialPageHeader({ className, period, semester, room }) {
     return (

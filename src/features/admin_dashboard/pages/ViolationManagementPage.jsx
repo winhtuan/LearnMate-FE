@@ -1,5 +1,4 @@
-import React from 'react';
-import Header from '../components/Header';
+import AdminHeader from '@/shared/layout/AdminHeader';
 import Sidebar from '../components/Sidebar';
 import ViolationStats from '../components/ViolationStats';
 import ViolationTable from '../components/ViolationTable';
@@ -11,7 +10,7 @@ const ViolationManagementPage = () => {
 
     return (
         <div className="bg-background-light text-slate-800 antialiased h-screen flex flex-col overflow-hidden">
-            <Header />
+            <AdminHeader />
             <div className="flex flex-1 overflow-hidden pt-16">
                 <Sidebar />
                 <main className="flex-1 ml-64 overflow-y-auto p-8 bg-background-light">

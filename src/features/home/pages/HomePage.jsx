@@ -1,5 +1,4 @@
-import React from 'react';
-import Header from '@/features/home/components/Header';
+import MainHeader from '@/shared/layout/MainHeader';
 import Hero from '@/features/home/components/Hero';
 import Features from '@/features/home/components/Features';
 import HowItWorksSection from '@/features/home/components/HowItWorksSection';
@@ -26,7 +25,7 @@ import SocialLinks from '@/shared/components/ui/SocialLinks';
 function HomePage() {
   return (
     <div className="font-display text-slate-900 bg-background-light min-h-screen flex flex-col">
-      <Header />
+      <MainHeader />
       <main className="flex-grow">
         <Hero />
         <Features />

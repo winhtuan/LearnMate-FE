@@ -1,6 +1,6 @@
 
 import Sidebar from "../components/Sidebar";
-import Breadcrumb from '../../../shared/components/ui/Breadcrumb';
+import Breadcrumb from '@/shared/components/ui/Breadcrumb';
 import SearchBar from "../components/SearchBar";
 import HeroBanner from "../components/HeroBanner";
 import TabNavigation from "../components/TabNavigation";

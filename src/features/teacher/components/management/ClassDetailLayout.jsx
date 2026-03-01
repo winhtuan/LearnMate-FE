@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import TeacherHeader from "@/shared/components/layout/TeacherHeader";
+import TeacherHeader from "@/shared/layout/TeacherHeader";
 import Breadcrumb from "./Breadcrumb";
 import ClassInfoHeader from "./ClassInfoHeader";
 import ClassTabNavigation from "./ClassTabNavigation";
-import { classOverviewData } from "../../data/management/classOverview.data";
+import { classOverviewData } from "@/features/teacher/data/management/classOverview.data";
 
 export default function ClassDetailLayout({ children, activeTab }) {
   const { classId } = useParams();

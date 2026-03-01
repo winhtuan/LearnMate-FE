@@ -1,4 +1,3 @@
-import React from 'react';
 
 function StepCard({ number, title, description }) {
   return (

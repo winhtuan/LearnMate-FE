@@ -1,4 +1,3 @@
-import React from 'react';
 
 const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, confirmText, type = 'danger' }) => {
     if (!isOpen) return null;

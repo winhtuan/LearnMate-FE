@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import TeacherHeader from "@/shared/components/layout/TeacherHeader";
+import TeacherHeader from "@/shared/layout/TeacherHeader";
 
 export default function TeacherLayout() {
   return (

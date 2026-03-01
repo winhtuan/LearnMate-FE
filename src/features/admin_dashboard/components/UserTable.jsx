@@ -1,4 +1,3 @@
-import React from 'react';
 
 const UserTable = ({ users, onAction }) => {
     const statusClasses = {

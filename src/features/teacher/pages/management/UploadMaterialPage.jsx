@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import React from 'react';
-import TeacherHeader from '@/shared/components/layout/TeacherHeader';
+import TeacherHeader from '@/shared/layout/TeacherHeader';
 import MaterialHeader from '@/features/teacher/components/management/MaterialHeader';
 import MaterialsToolbar from '@/features/teacher/components/management/MaterialsToolbar';
 import FileUploadZone from '@/features/teacher/components/management/FileUploadZone';

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Header from '../components/Header';
+import { useState } from 'react';
+import AdminHeader from '@/shared/layout/AdminHeader';
 import Sidebar from '../components/Sidebar';
 import UserTable from '../components/UserTable';
 import UserStats from '../components/UserStats';
@@ -37,7 +37,7 @@ const UserManagementPage = () => {
 
     return (
         <div className="bg-background-light text-[#121516] antialiased h-screen flex flex-col overflow-hidden">
-            <Header />
+            <AdminHeader />
             <div className="flex flex-1 pt-16 overflow-hidden">
                 <Sidebar />
                 <main className="flex-1 ml-64 overflow-y-auto bg-background-light">

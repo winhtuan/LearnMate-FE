@@ -147,3 +147,13 @@ body {
   background: radial-gradient(circle at top right, rgba(19, 127, 236, 0.05), transparent 40%),
               radial-gradient(circle at bottom left, rgba(19, 127, 236, 0.03), transparent 40%);
 }
+
+/* Auth step animations */
+@keyframes fadeSlideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(var(--x-to, -20px)); }
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(var(--x-from, 20px)); }
+  to   { opacity: 1; transform: translateX(0); }
+}

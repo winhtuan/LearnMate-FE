@@ -1,4 +1,3 @@
-import React from 'react';
 
 const StatCard = ({ metric }) => {
     const { label, value, trend, trendUp, icon, color, isAlert } = metric;

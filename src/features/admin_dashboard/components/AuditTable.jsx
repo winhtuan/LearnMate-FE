@@ -1,4 +1,3 @@
-import React from 'react';
 import { adminDashboardData } from '../data/admin_dashboard.data';
 
 const AuditTable = () => {

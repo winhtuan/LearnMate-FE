@@ -1,8 +1,8 @@
-import { useDashboardData } from '../../hooks/useDashboardData';
 import WelcomeBanner from '../WelcomeBanner';
+import { useAuth } from '@/app/context/AuthContext';
 
-export default function DashboardWelcomeWidget() {
-  const { data, loading } = useDashboardData();
+export default function DashboardWelcomeWidget({ data, loading }) {
+  const { user } = useAuth();
 
   if (loading) {
      return (
@@ -20,16 +20,16 @@ export default function DashboardWelcomeWidget() {
      );
   }
 
-  const user = data?.user || {};
+  const display = data?.display || {};
   const stats = data?.stats || {};
 
   return (
-    <WelcomeBanner 
-      greeting={user.greeting}
-      studentName={user.studentName}
-      currentDay={user.currentDay}
-      currentDate={user.currentDate}
-      currentTerm={user.currentTerm}
+    <WelcomeBanner
+      greeting={display.greeting}
+      studentName={user?.firstName}
+      currentDay={display.currentDay}
+      currentDate={display.currentDate}
+      currentTerm={display.currentTerm}
       stats={stats}
     />
   );

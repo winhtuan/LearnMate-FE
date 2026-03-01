@@ -1,4 +1,3 @@
-import React from 'react';
 
 const UserStats = ({ stats }) => {
     const colorClasses = {

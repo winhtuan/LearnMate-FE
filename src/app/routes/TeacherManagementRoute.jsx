@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import TutorRegister from "@/features/teacher/pages/management/tutorRegister";
-import TutorDashboard from "@/features/teacher/pages/management/tutorDashboard";
+import TutorRegister from "@/features/teacher/pages/management/TutorRegister";
+import TutorDashboard from "@/features/teacher/pages/management/TutorDashboard";
 import TutorClassManagementPage from "@/features/teacher/pages/management/TutorClassManagementPage";
-import ClassStudentViewByTutor from "@/features/teacher/pages/management/classStudentViewByTutor";
+import ClassStudentViewByTutor from "@/features/teacher/pages/management/ClassStudentViewByTutor";
 import TutorStatis from "@/features/teacher/pages/management/TutorStatis";
-import MaterialTutorDetail from "@/features/teacher/pages/management/materialTutorDetail";
+import MaterialTutorDetail from "@/features/teacher/pages/management/MaterialTutorDetail";
 import UploadMaterialPage from "@/features/teacher/pages/management/UploadMaterialPage";
 import TutorFeedbackPage from "@/features/teacher/pages/management/TutorFeedbackPage";
 import ClassOverviewPage from "@/features/teacher/pages/management/ClassOverviewPage";

@@ -1,5 +1,4 @@
-import React from 'react';
-import Header from '@/features/admin_dashboard/components/Header';
+import AdminHeader from '@/shared/layout/AdminHeader';
 import Sidebar from '@/features/admin_dashboard/components/Sidebar';
 import AdminProfileSettings from '@/features/admin_dashboard/components/AdminProfileSettings';
 import SystemConfigSettings from '@/features/admin_dashboard/components/SystemConfigSettings';
@@ -12,7 +11,7 @@ const SettingsPage = () => {
 
     return (
         <div className="bg-white text-slate-800 antialiased h-screen flex flex-col overflow-hidden leading-relaxed">
-            <Header />
+            <AdminHeader />
             <div className="flex flex-1 overflow-hidden pt-16">
                 <Sidebar />
                 <main className="flex-1 ml-64 overflow-y-auto bg-white">

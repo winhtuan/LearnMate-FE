@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import TeacherHeader from '@/shared/components/layout/TeacherHeader';
+import { useState } from 'react';
+import TeacherHeader from '@/shared/layout/TeacherHeader';
 import ClassCard from '@/features/teacher/components/management/ClassCard';
 import MetricCard from '@/features/teacher/components/management/MetricCard';
 import { teacherClassesData } from '@/features/teacher/data/management/teacherClasses.data';

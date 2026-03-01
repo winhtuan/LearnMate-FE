@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../../../shared/components/Header";
-import { studentProfileData } from "../data/studentProfile.data";
+import StudentHeader from '@/shared/layout/StudentHeader';
+import { useAuth } from '@/app/context/AuthContext';
 
 export default function EditStudentProfilePage() {
     const navigate = useNavigate();
-    const { user } = studentProfileData;
+    const { user } = useAuth();
 
     // Local state for form fields - initialized with data from studentProfile.data
     const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ export default function EditStudentProfilePage() {
 
     return (
         <div className="bg-background-light text-slate-900 font-display antialiased overflow-x-hidden min-h-screen flex flex-col">
-            <Header activeTab="" />
+            <StudentHeader activeTab="" />
 
             {/* Main Content */}
             <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
