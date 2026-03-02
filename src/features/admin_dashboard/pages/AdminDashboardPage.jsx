@@ -4,7 +4,7 @@ import StatCard from '@/features/admin_dashboard/components/StatCard';
 import UserGrowthChart from '@/features/admin_dashboard/components/UserGrowthChart';
 import WeeklyActivityChart from '@/features/admin_dashboard/components/WeeklyActivityChart';
 import AuditTable from '@/features/admin_dashboard/components/AuditTable';
-import { adminDashboardData } from '@/features/admin_dashboard/data/admin_dashboard.data';
+import { adminDashboardData } from '@/features/admin_dashboard/data/adminDashboard.data';
 import '@/features/admin_dashboard/styles/admin.css';
 
 const AdminDashboardPage = () => {

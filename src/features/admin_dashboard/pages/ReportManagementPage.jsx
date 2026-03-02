@@ -4,7 +4,7 @@ import ReportStats from '../components/ReportStats';
 import EngagementChart from '../components/EngagementChart';
 import TopCourses from '../components/TopCourses';
 import UserProgressTable from '../components/UserProgressTable';
-import { adminDashboardData } from '../data/admin_dashboard.data';
+import { adminDashboardData } from '../data/adminDashboard.data';
 import '../styles/admin.css';
 
 const ReportManagementPage = () => {

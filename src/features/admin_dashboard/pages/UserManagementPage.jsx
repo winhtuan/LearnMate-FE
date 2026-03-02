@@ -5,7 +5,7 @@ import UserTable from '../components/UserTable';
 import UserStats from '../components/UserStats';
 import UserModal from '../components/UserModal';
 import ConfirmModal from '../components/ConfirmModal';
-import { adminDashboardData } from '../data/admin_dashboard.data';
+import { adminDashboardData } from '../data/adminDashboard.data';
 import '../styles/admin.css';
 
 const UserManagementPage = () => {

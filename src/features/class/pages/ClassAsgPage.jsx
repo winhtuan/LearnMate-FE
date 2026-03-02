@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useClassDetail } from '../hooks/useClassDetail';
 import Sidebar from '../components/Sidebar';
-import Breadcrumb from '@/shared/components/ui/Breadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import SearchBar from '../components/SearchBar';
 import HeroBanner from '../components/HeroBanner';
 import TabNavigation from '../components/TabNavigation';

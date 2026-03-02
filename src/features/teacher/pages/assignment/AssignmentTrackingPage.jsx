@@ -3,7 +3,7 @@ import StatsCards from "@/features/teacher/components/assignment/StatsCards";
 import TrackingFilters from "@/features/teacher/components/assignment/TrackingFilters";
 import AssignmentTrackingTable from "@/features/teacher/components/assignment/AssignmentTrackingTable";
 import ActionSidebar from "@/features/teacher/components/assignment/ActionSidebar";
-import { assignmentTrackingData } from "@/features/teacher/data/assignment/assignment-tracking.data";
+import { assignmentTrackingData } from "@/features/teacher/data/assignment/assignmentTracking.data";
 
 export default function AssignmentTrackingPage() {
   const {

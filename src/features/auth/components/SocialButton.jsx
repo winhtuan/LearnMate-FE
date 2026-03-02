@@ -1,5 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
-import Button from "@/shared/components/ui/Button";
+import Button from "@/components/ui/button";
 
 const icons = {
   google: <FcGoogle className="w-5 h-5" />,

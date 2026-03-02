@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '@/shared/components/ui/Logo';
+import Logo from '@/components/ui/logo';
 import { navigationLinks } from '@/features/home/data/homeData';
 import { useAuth } from '@/app/context/AuthContext';
 

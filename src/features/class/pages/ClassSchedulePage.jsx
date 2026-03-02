@@ -1,6 +1,6 @@
 
 import Sidebar from "../components/Sidebar";
-import Breadcrumb from '@/shared/components/ui/Breadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import SearchBar from "../components/SearchBar";
 import HeroBanner from "../components/HeroBanner";
 import TabNavigation from "../components/TabNavigation";
@@ -9,7 +9,7 @@ import ScheduleCalendar from "../components/ScheduleCalendar";
 import EventTypeLegend from "../components/EventTypeLegend";
 import { classScheduleData } from "../data/classSchedule.data";
 
-export default function ClassSchedule() {
+export default function ClassSchedulePage() {
   const { user, navigation, breadcrumbItems, classInfo, tabs, calendar, eventTypes } = classScheduleData;
 
   return (

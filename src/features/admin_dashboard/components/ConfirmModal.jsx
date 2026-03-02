@@ -1,56 +1,74 @@
+import Modal from "@/components/ui/modal";
+import Button from "@/components/ui/button";
 
-const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, confirmText, type = 'danger' }) => {
-    if (!isOpen) return null;
-
-    const typeClasses = {
-        danger: 'bg-red-600 hover:bg-red-700 shadow-red-200',
-        warning: 'bg-orange-500 hover:bg-orange-600 shadow-orange-200',
-        primary: 'bg-primary hover:bg-primary/90 shadow-primary/20',
-    };
-
-    const iconClasses = {
-        danger: 'text-red-600 bg-red-50',
-        warning: 'text-orange-600 bg-orange-50',
-        primary: 'text-primary bg-primary/10',
-    };
-
-    const icons = {
-        danger: 'delete_forever',
-        warning: 'block',
-        primary: 'info',
-    };
-
-    return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200">
-                <div className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                        <div className={`size-12 rounded-full flex items-center justify-center ${iconClasses[type]}`}>
-                            <span className="material-symbols-outlined text-2xl">{icons[type]}</span>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold text-slate-900">{title}</h3>
-                            <p className="text-sm text-slate-500 mt-1">{message}</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-slate-50 px-6 py-4 flex items-center justify-end gap-3">
-                    <button
-                        onClick={onClose}
-                        className="px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-200 rounded-lg transition-colors"
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        onClick={onConfirm}
-                        className={`px-6 py-2 text-sm font-bold text-white rounded-lg shadow-lg transition-all active:scale-95 ${typeClasses[type]}`}
-                    >
-                        {confirmText}
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+const ICON_CLASSES = {
+  danger: "text-red-600 bg-red-50",
+  warning: "text-orange-600 bg-orange-50",
+  primary: "text-primary bg-primary/10",
 };
+
+const ICONS = {
+  danger: "delete_forever",
+  warning: "block",
+  primary: "info",
+};
+
+// danger → generic Button "danger" variant
+// warning → orange (no standard variant), inline styled
+// primary → generic Button "primary" variant
+const ActionButton = ({ type, onClick, children }) => {
+  if (type === "warning") {
+    return (
+      <button
+        onClick={onClick}
+        className="px-6 py-2 text-sm font-bold text-white bg-orange-500 hover:bg-orange-600 rounded-lg shadow-lg shadow-orange-200 transition-all active:scale-[0.98]"
+      >
+        {children}
+      </button>
+    );
+  }
+  return (
+    <Button variant={type === "danger" ? "danger" : "primary"} onClick={onClick}>
+      {children}
+    </Button>
+  );
+};
+
+const ConfirmModal = ({
+  isOpen,
+  onClose,
+  onConfirm,
+  title,
+  message,
+  confirmText,
+  type = "danger",
+}) => (
+  <Modal
+    open={isOpen}
+    onClose={onClose}
+    title={title}
+    size="sm"
+    closeOnBackdrop={false}
+    footer={
+      <div className="flex items-center justify-end gap-3">
+        <Button variant="outline" onClick={onClose}>
+          Cancel
+        </Button>
+        <ActionButton type={type} onClick={onConfirm}>
+          {confirmText}
+        </ActionButton>
+      </div>
+    }
+  >
+    <div className="flex items-center gap-4">
+      <div
+        className={`size-12 shrink-0 rounded-full flex items-center justify-center ${ICON_CLASSES[type]}`}
+      >
+        <span className="material-symbols-outlined text-2xl">{ICONS[type]}</span>
+      </div>
+      <p className="text-sm text-slate-500">{message}</p>
+    </div>
+  </Modal>
+);
 
 export default ConfirmModal;

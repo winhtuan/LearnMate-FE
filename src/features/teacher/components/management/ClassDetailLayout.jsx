@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import TeacherHeader from "@/shared/layout/TeacherHeader";
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "@/components/ui/breadcrumb";
 import ClassInfoHeader from "./ClassInfoHeader";
 import ClassTabNavigation from "./ClassTabNavigation";
 import { classOverviewData } from "@/features/teacher/data/management/classOverview.data";

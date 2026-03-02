@@ -1,4 +1,8 @@
 
+// ANTI-PATTERN NOTE: This component embeds a filter header, table, and pagination
+// inside a single unified card div. To use the generic <Table> primitive the
+// filter header would need to be lifted out to a sibling component, changing
+// the visual design. Flagged for a future dedicated refactor pass.
 const ViolationTable = ({ violations }) => {
     const statusClasses = {
         pending: 'text-accent-orange',

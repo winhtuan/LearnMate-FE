@@ -2,7 +2,7 @@ import ClassDetailLayout from "@/features/teacher/components/management/ClassDet
 import CreateAssignmentHeader from "@/features/teacher/components/assignment/CreateAssignmentHeader";
 import AssignmentEditor from "@/features/teacher/components/assignment/AssignmentEditor";
 import SettingsSidebar from "@/features/teacher/components/assignment/SettingsSidebar";
-import { assignmentTrackingAllData } from "@/features/teacher/data/assignment/assignment-tracking-all.data";
+import { assignmentTrackingAllData } from "@/features/teacher/data/assignment/assignmentTrackingAll.data";
 
 export default function CreateAssignmentPage() {
   const { user, navigation } = assignmentTrackingAllData;
