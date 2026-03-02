@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { adminDashboardData } from '../data/admin_dashboard.data';
+import { adminDashboardData } from '../data/adminDashboard.data';
 
 const Sidebar = () => {
     const { navigation } = adminDashboardData;

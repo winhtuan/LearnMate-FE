@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect -- intentional: sync internal state from controlled value prop + day clamping */
 import { useEffect, useMemo, useState } from "react";
 import { Calendar } from "lucide-react";
-import Select from "@/shared/components/ui/Select";
+import Select from "@/components/ui/select";
 
 const months = [
   { value: 1, label: "January" },

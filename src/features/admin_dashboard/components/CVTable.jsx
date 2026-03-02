@@ -1,82 +1,94 @@
-import { useState } from 'react';
-import CVDetailsModal from './CVDetailsModal';
+import { useState } from "react";
+import Table from "@/components/ui/table";
+import CVDetailsModal from "./CVDetailsModal";
+
+const STATUS_CLASS = {
+  pending: "bg-amber-50 text-amber-700 border-amber-100",
+  approved: "bg-emerald-50 text-emerald-700 border-emerald-100",
+  rejected: "bg-rose-50 text-rose-700 border-rose-100",
+};
+
+const COLUMNS = [
+  {
+    key: "applicant",
+    header: "Applicant",
+    render: (cv) => (
+      <div className="flex items-center gap-3">
+        <div className="size-10 rounded-full bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
+          <img src={cv.avatar} alt={cv.name} className="w-full h-full object-cover" />
+        </div>
+        <div>
+          <p className="text-sm font-bold text-slate-900">{cv.name}</p>
+          <p className="text-xs text-slate-500">{cv.email}</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    key: "subject",
+    header: "Subject Area",
+    render: (cv) => (
+      <span className="text-sm font-medium text-slate-700">{cv.subject}</span>
+    ),
+  },
+  {
+    key: "experience",
+    header: "Experience",
+    cellClass: "text-slate-600",
+  },
+  {
+    key: "appliedDate",
+    header: "Date Applied",
+    cellClass: "text-slate-500",
+  },
+  {
+    key: "status",
+    header: "Status",
+    render: (cv) => (
+      <span
+        className={`px-2.5 py-1 rounded-full text-[10px] font-bold border ${
+          STATUS_CLASS[cv.statusType] ?? "bg-slate-50 text-slate-700 border-slate-100"
+        }`}
+      >
+        {cv.status}
+      </span>
+    ),
+  },
+  {
+    key: "actions",
+    header: "Actions",
+    align: "right",
+    // render defined inside component to capture setSelectedCV — see CVTable body
+  },
+];
 
 const CVTable = ({ cvs }) => {
-    const [selectedCV, setSelectedCV] = useState(null);
+  const [selectedCV, setSelectedCV] = useState(null);
 
-    const getStatusStyles = (type) => {
-        switch (type) {
-            case 'pending':
-                return 'bg-amber-50 text-amber-700 border-amber-100';
-            case 'approved':
-                return 'bg-emerald-50 text-emerald-700 border-emerald-100';
-            case 'rejected':
-                return 'bg-rose-50 text-rose-700 border-rose-100';
-            default:
-                return 'bg-slate-50 text-slate-700 border-slate-100';
-        }
-    };
+  const columns = [
+    ...COLUMNS.slice(0, -1),
+    {
+      key: "actions",
+      header: "Actions",
+      align: "right",
+      render: (cv) => (
+        <button
+          onClick={() => setSelectedCV(cv)}
+          className="text-primary hover:text-primary/80 font-bold text-sm"
+        >
+          Review CV
+        </button>
+      ),
+    },
+  ];
 
-    return (
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                    <thead>
-                        <tr className="bg-slate-50/50 border-b border-slate-100">
-                            <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-500">Applicant</th>
-                            <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-500">Subject Area</th>
-                            <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-500">Experience</th>
-                            <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-500">Date Applied</th>
-                            <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-500">Status</th>
-                            <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-500 text-right">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100">
-                        {cvs.map((cv) => (
-                            <tr key={cv.id} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-6 py-4">
-                                    <div className="flex items-center gap-3">
-                                        <div className="size-10 rounded-full bg-slate-100 border border-slate-200 overflow-hidden">
-                                            <img src={cv.avatar} alt={cv.name} className="w-full h-full object-cover" />
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-bold text-slate-900">{cv.name}</p>
-                                            <p className="text-xs text-slate-500">{cv.email}</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <span className="text-sm font-medium text-slate-700">{cv.subject}</span>
-                                </td>
-                                <td className="px-6 py-4 text-sm text-slate-600">{cv.experience}</td>
-                                <td className="px-6 py-4 text-sm text-slate-500">{cv.appliedDate}</td>
-                                <td className="px-6 py-4">
-                                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold border ${getStatusStyles(cv.statusType)}`}>
-                                        {cv.status}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <button
-                                        onClick={() => setSelectedCV(cv)}
-                                        className="text-primary hover:text-primary/80 font-bold text-sm"
-                                    >
-                                        Review CV
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+  return (
+    <>
+      <Table columns={columns} data={cvs} keyExtractor={(cv) => cv.id} />
 
-            {selectedCV && (
-                <CVDetailsModal
-                    cv={selectedCV}
-                    onClose={() => setSelectedCV(null)}
-                />
-            )}
-        </div>
-    );
+      <CVDetailsModal cv={selectedCV} onClose={() => setSelectedCV(null)} />
+    </>
+  );
 };
 
 export default CVTable;

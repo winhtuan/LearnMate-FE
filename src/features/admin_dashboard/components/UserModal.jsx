@@ -1,118 +1,101 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import Modal from "@/components/ui/modal";
+import Button from "@/components/ui/button";
 
-const UserModal = ({ isOpen, onClose, onSave, user, mode = 'create' }) => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        role: 'Student',
-        status: 'Active',
-    });
+const FIELD_CLASS =
+  "w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition-all";
 
-    useEffect(() => {
-        if (user && mode === 'edit') {
-            setFormData({
-                name: user.name || '',
-                email: user.email || '',
-                role: user.role || 'Student',
-                status: user.status || 'Active',
-            });
-        } else {
-            setFormData({
-                name: '',
-                email: '',
-                role: 'Student',
-                status: 'Active',
-            });
-        }
-    }, [user, mode, isOpen]);
+const INITIAL = { name: "", email: "", role: "Student", status: "Active" };
 
-    if (!isOpen) return null;
+const UserModal = ({ isOpen, onClose, onSave, user, mode = "create" }) => {
+  const [formData, setFormData] = useState(INITIAL);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onSave(formData);
-    };
-
-    return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden animate-in zoom-in-95 duration-200">
-                <div className="p-6 border-b border-slate-100 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-slate-900">
-                        {mode === 'create' ? 'Create New User' : 'Edit User Details'}
-                    </h3>
-                    <button onClick={onClose} className="p-2 text-slate-400 hover:text-slate-600 transition-colors">
-                        <span className="material-symbols-outlined">close</span>
-                    </button>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <div className="p-6 space-y-4">
-                        <div className="space-y-1.5">
-                            <label className="text-sm font-bold text-slate-700">Full Name</label>
-                            <input
-                                required
-                                value={formData.name}
-                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition-all"
-                                placeholder="e.g. John Doe"
-                            />
-                        </div>
-                        <div className="space-y-1.5">
-                            <label className="text-sm font-bold text-slate-700">Email Address</label>
-                            <input
-                                required
-                                type="email"
-                                value={formData.email}
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition-all"
-                                placeholder="john.doe@example.com"
-                            />
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="space-y-1.5">
-                                <label className="text-sm font-bold text-slate-700">User Role</label>
-                                <select
-                                    value={formData.role}
-                                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition-all"
-                                >
-                                    <option>Student</option>
-                                    <option>Teacher</option>
-                                    <option>Admin</option>
-                                </select>
-                            </div>
-                            <div className="space-y-1.5">
-                                <label className="text-sm font-bold text-slate-700">Account Status</label>
-                                <select
-                                    value={formData.status}
-                                    onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary outline-none transition-all"
-                                >
-                                    <option>Active</option>
-                                    <option>Blocked</option>
-                                    <option>Pending</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-slate-50 px-6 py-4 flex items-center justify-end gap-3">
-                        <button
-                            type="button"
-                            onClick={onClose}
-                            className="px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-200 rounded-lg transition-colors"
-                        >
-                            Cancel
-                        </button>
-                        <button
-                            type="submit"
-                            className="px-8 py-2.5 bg-primary text-white text-sm font-bold rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95"
-                        >
-                            {mode === 'create' ? 'Create User' : 'Save Changes'}
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: reset form when modal opens or user/mode changes
+    setFormData(
+      user && mode === "edit"
+        ? {
+            name: user.name || "",
+            email: user.email || "",
+            role: user.role || "Student",
+            status: user.status || "Active",
+          }
+        : INITIAL
     );
+  }, [user, mode, isOpen]);
+
+  const set = (key) => (e) => setFormData((f) => ({ ...f, [key]: e.target.value }));
+
+  return (
+    <Modal
+      open={isOpen}
+      onClose={onClose}
+      title={mode === "create" ? "Create New User" : "Edit User Details"}
+      size="md"
+      footer={
+        <div className="flex items-center justify-end gap-3">
+          <Button variant="outline" type="button" onClick={onClose}>
+            Cancel
+          </Button>
+          <Button type="submit" form="user-modal-form">
+            {mode === "create" ? "Create User" : "Save Changes"}
+          </Button>
+        </div>
+      }
+    >
+      {/* form linked to footer submit button via the `form` HTML attribute */}
+      <form
+        id="user-modal-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSave(formData);
+        }}
+        className="space-y-4"
+      >
+        <div className="space-y-1.5">
+          <label className="text-sm font-bold text-slate-700">Full Name</label>
+          <input
+            required
+            value={formData.name}
+            onChange={set("name")}
+            className={FIELD_CLASS}
+            placeholder="e.g. John Doe"
+          />
+        </div>
+
+        <div className="space-y-1.5">
+          <label className="text-sm font-bold text-slate-700">Email Address</label>
+          <input
+            required
+            type="email"
+            value={formData.email}
+            onChange={set("email")}
+            className={FIELD_CLASS}
+            placeholder="john.doe@example.com"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-1.5">
+            <label className="text-sm font-bold text-slate-700">User Role</label>
+            <select value={formData.role} onChange={set("role")} className={FIELD_CLASS}>
+              <option>Student</option>
+              <option>Teacher</option>
+              <option>Admin</option>
+            </select>
+          </div>
+          <div className="space-y-1.5">
+            <label className="text-sm font-bold text-slate-700">Account Status</label>
+            <select value={formData.status} onChange={set("status")} className={FIELD_CLASS}>
+              <option>Active</option>
+              <option>Blocked</option>
+              <option>Pending</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </Modal>
+  );
 };
 
 export default UserModal;

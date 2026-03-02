@@ -1,4 +1,8 @@
 
+// ANTI-PATTERN NOTE: This component owns its own title header ("Detailed Student Progress")
+// and a "View All" footer inside a unified card wrapper. To use the generic <Table>
+// the title/footer would need to move to the parent page, changing the visual design.
+// Flagged for a future dedicated refactor pass.
 const UserProgressTable = ({ users }) => {
     return (
         <div className="mt-8 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">

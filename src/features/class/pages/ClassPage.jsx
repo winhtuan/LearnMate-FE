@@ -1,5 +1,5 @@
 import Sidebar from "../components/Sidebar";
-import Breadcrumb from '@/shared/components/ui/Breadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb';
 import SearchBar from "../components/SearchBar";
 import ClassFilterTabs from "../components/ClassFilterTabs";
 import ClassStatsCard from "../components/ClassStatsCard";

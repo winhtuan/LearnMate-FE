@@ -2,10 +2,10 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import AuthLeft from "@/features/auth/components/AuthLeft";
-import Button from "@/shared/components/ui/Button";
-import Field from "@/shared/components/ui/Field";
-import Stepper from "@/shared/components/ui/Stepper";
-import StepAnimator from "@/shared/components/ui/StepAnimator";
+import Button from "@/components/ui/button";
+import Field from "@/components/ui/field";
+import Stepper from "@/components/ui/stepper";
+import StepAnimator from "@/components/ui/step-animator";
 import PasswordField from "@/features/auth/components/PasswordField";
 import SocialButton from "@/features/auth/components/SocialButton";
 import DateOfBirthField from "@/features/auth/components/DateOfBirthField";

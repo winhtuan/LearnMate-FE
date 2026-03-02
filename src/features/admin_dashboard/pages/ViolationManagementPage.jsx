@@ -2,7 +2,7 @@ import AdminHeader from '@/shared/layout/AdminHeader';
 import Sidebar from '../components/Sidebar';
 import ViolationStats from '../components/ViolationStats';
 import ViolationTable from '../components/ViolationTable';
-import { adminDashboardData } from '../data/admin_dashboard.data';
+import { adminDashboardData } from '../data/adminDashboard.data';
 import '../styles/admin.css';
 
 const ViolationManagementPage = () => {

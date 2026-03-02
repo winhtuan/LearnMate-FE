@@ -5,7 +5,7 @@ import HowItWorksSection from '@/features/home/components/HowItWorksSection';
 import TutorList from '@/features/home/components/TutorList';
 import CTASection from '@/features/home/components/CTASection';
 import Footer from '@/shared/components/layout/Footer';
-import SocialLinks from '@/shared/components/ui/SocialLinks';
+import SocialLinks from '@/components/ui/social-links';
 
 /**
  * HomePage - Student Dashboard Landing Page

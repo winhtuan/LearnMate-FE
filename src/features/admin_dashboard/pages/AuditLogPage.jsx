@@ -1,7 +1,7 @@
 import AdminHeader from '@/shared/layout/AdminHeader';
 import Sidebar from '../components/Sidebar';
 import AuditLogTable from '../components/AuditLogTable';
-import { adminDashboardData } from '../data/admin_dashboard.data';
+import { adminDashboardData } from '../data/adminDashboard.data';
 import '../styles/admin.css';
 
 const AuditLogPage = () => {

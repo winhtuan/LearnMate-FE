@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Modal from "@/shared/components/ui/Modal";
+import Modal from "@/components/ui/modal";
 
 const maskEmail = (s) => {
   if (!s) return "";

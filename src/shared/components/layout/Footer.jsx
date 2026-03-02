@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '@/shared/components/ui/Logo';
-import SocialLinks from '@/shared/components/ui/SocialLinks';
+import Logo from '@/components/ui/logo';
+import SocialLinks from '@/components/ui/social-links';
 import { platformLinks, supportLinks, companyLinks, footerData, socialLinks } from '@/features/home/data/homeData';
 
 function Footer() {

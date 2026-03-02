@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Modal from "@/shared/components/ui/Modal";
-import Field from "@/shared/components/ui/Field";
-import Button from "@/shared/components/ui/Button";
+import Modal from "@/components/ui/modal";
+import Field from "@/components/ui/field";
+import Button from "@/components/ui/button";
 import PasswordField from "@/features/auth/components/PasswordField";
 import OtpInput from "@/features/auth/components/OtpInput";
 import {

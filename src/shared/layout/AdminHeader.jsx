@@ -1,4 +1,4 @@
-import { adminDashboardData } from '@/features/admin_dashboard/data/admin_dashboard.data';
+import { adminDashboardData } from '@/features/admin_dashboard/data/adminDashboard.data';
 
 const defaultUser = adminDashboardData.user;
 
